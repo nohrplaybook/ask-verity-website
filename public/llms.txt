@@ -1,0 +1,48 @@
+# Ask Verity
+
+> Ask Verity is an AI HR manager for Australian businesses.
+
+## What Ask Verity does
+
+Ask Verity gives founders, business owners, managers and operations leaders access to Verity: an AI HR manager designed to think like a senior HR director with Australian employment-law context.
+
+Users can bring Verity a messy people problem in everyday language. Verity asks diagnostic questions, separates facts and overlapping risks, helps the user decide what to do, and creates practical HR outputs such as conversation scripts, plans, letters, checklists, consultation documents and decision records.
+
+## How Verity differs from a generic chatbot
+
+Verity is designed around executable HR processes rather than general information retrieval. A Verity conversation is intended to move from the initial question through diagnosis, decision support, action planning and usable documents while keeping the whole case in context.
+
+## Primary audience
+
+Ask Verity is built first for Australian founders, small-business owners, managers and operations leaders, typically in organisations from around 15 people upwards. HR teams can also use Verity.
+
+## Areas of support
+
+- Underperformance and performance-management conversations
+- Sick leave, absence patterns and health-related concerns
+- Disability and reasonable workplace adjustments
+- Redundancy and organisational restructures
+- Complaints, workplace investigations and conduct matters
+- Business-case summaries and objective selection criteria
+- Consultation plans, letters, scripts, templates and checklists
+- Everyday people-management decisions and documentation
+
+## People Problems Library
+
+Ask Verity is developing a public library of practical guidance for Australian founders, business owners and managers. The library is organised around the real questions people leaders ask, including underperformance, sick leave, reasonable adjustments, redundancy, conduct, complaints and difficult conversations.
+
+The library is available at https://www.askverity.io/people-problems.
+
+## Trust and development approach
+
+Verity's logic is shaped by senior HR and employee-relations judgement. The current development programme includes Australian employment-law context, expert legal oversight, current-source checks, escalation guardrails, scenario testing and HR, legal and strict decision-quality review lenses.
+
+Testing programme figures stated on the website describe the product's development and quality-assurance system. They do not represent customer outcomes or a guarantee of legal compliance.
+
+## Important limitation
+
+Ask Verity provides HR guidance and decision support. It is not a law firm and does not replace advice from a qualified lawyer when legal advice is required.
+
+## Availability
+
+Australian early access is planned for the end of August 2026. Businesses can join the waitlist at https://www.askverity.io/.
