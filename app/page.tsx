@@ -27,7 +27,15 @@ const workflow = [
     title: "Get the process, not just an answer.",
     copy: "Walk away with the decision path and the practical work: scripts, plans, letters, checklists and consultation documents.",
     artefact: "Ready to use",
-    example: "Conversation plan · evidence checklist · adjustment review · follow-up letter",
+    example: "Conversation scripts · evidence checklist · reasonable adjustment review · follow-up letter · letter to GP",
+  },
+  {
+    number: "04",
+    verb: "Meet",
+    title: "Bring Verity into the room.",
+    copy: "With everyone’s consent, Verity records one-on-ones, underperformance meetings and investigations, guiding you in real time and learning the complete matter.",
+    artefact: "Inside the meeting",
+    example: "Recording · transcript · live prompts · review · next steps",
   },
 ];
 
@@ -35,14 +43,14 @@ const useCases = [
   {
     index: "01",
     title: "Underperformance",
-    prompt: "“Someone is underperforming. How do I manage it fairly?”",
-    outputs: ["Evidence map", "Meeting script", "Performance plan"],
+    prompt: "“Someone is underperforming. How do I manage it fairly and fast?”",
+    outputs: ["OKRs / KPIs", "Meeting scripts", "Performance improvement plan"],
   },
   {
     index: "02",
     title: "Sick leave & absence",
-    prompt: "“The pattern is becoming a problem. What can I actually do?”",
-    outputs: ["Risk checks", "Questions to ask", "Document trail"],
+    prompt: "“His sickness absences are becoming a pattern. What can I actually do?”",
+    outputs: ["Risk checks", "Letter to GP", "Questions to ask", "Document trail"],
   },
   {
     index: "03",
@@ -74,17 +82,32 @@ const faqItems = [
   {
     question: "What exactly is Ask Verity?",
     answer:
-      "Ask Verity is an AI HR manager for Australian businesses. Bring Verity a people problem and she helps you diagnose what is really happening, decide what to do, and produce the practical HR work needed to do it well.",
+      "Ask Verity is a 24/7 AI HR manager for Australian businesses and busy HR teams. She helps you diagnose employee matters, joins and records meetings with consent, gives real-time guidance, and creates the documents and file notes needed to follow through.",
   },
   {
     question: "Is Verity just another AI chatbot?",
     answer:
-      "No. A generic chatbot gives you an answer and stops. Verity is being built around executable HR processes: she asks diagnostic questions, keeps the whole case in context, identifies risks and creates usable plans, scripts, letters, checklists and decision records.",
+      "No. A generic chatbot gives you an answer and stops. Verity keeps the complete employee matter in context, understands the meetings, identifies risk and creates usable plans, scripts, letters, file notes and decision records.",
   },
   {
     question: "Who is Verity for?",
     answer:
-      "Verity is designed first for Australian founders, business owners, managers and operations leaders, typically in businesses from around 15 people upwards. HR teams can use her too.",
+      "Verity is designed for Australian SMEs that need senior HR judgement without another full-time hire, and for larger, busy HR teams that need reliable extra capacity at a fraction of the cost of additional senior headcount.",
+  },
+  {
+    question: "Is Verity an HRIS?",
+    answer:
+      "No. Your HRIS stores and administers employee information. Verity helps you handle the employee matter itself. Tell her what needs to go on the employee file and she creates a clear, factual file note for you to review and add to your HRIS. Where supported, approved records can also be transferred through an integration.",
+  },
+  {
+    question: "What does Verity do during a meeting?",
+    answer:
+      "With everyone’s consent, Verity records and transcribes one-on-ones, underperformance meetings, difficult conversations and complex investigations. She provides real-time prompts, identifies what may have been missed, reviews how the meeting was handled and creates the appropriate follow-up afterwards.",
+  },
+  {
+    question: "What happens when a matter needs a lawyer?",
+    answer:
+      "You can bring a lawyer you choose into the matter through Verity. With your permission, the lawyer receives the organised history, recordings, transcripts, documents and previous guidance, so you do not have to prepare a separate brief or explain everything again.",
   },
   {
     question: "Can Verity replace an HR manager?",
@@ -141,18 +164,18 @@ const messaging = {
     formCta: "Join the Australian waitlist",
   },
   relief: {
-    category: "FOR FOUNDERS, OWNERS & MANAGERS",
+    category: "BUILT FOR SMEs & BUSY HR TEAMS",
     heroFirst: "You run the business.",
     heroSecond: "Verity handles the ",
     heroEmphasis: "people stuff.",
     heroSupport:
-      "Verity is the AI HR manager in your corner when a difficult people problem lands. Tell her what’s happening and she’ll help you decide what to do, what to say and what to document.",
+      "Verity is the 24/7 AI HR manager in your corner when a difficult people problem lands. Ask what to do or bring her into the meeting: she records it, guides you in real time and creates the follow-up documents and file notes. Built for SMEs and busy HR teams that need experienced extra capacity, at a fraction of the cost of another senior hire.",
     heroCta: "Put Verity in my corner",
     heroLink: "Meet your AI HR manager",
     statementFirst: "The people stuff",
     statementSecond: "stops following you home.",
     statementLead:
-      "No more lying awake replaying a conversation or wondering whether you handled it fairly. Verity gives you a calm, capable path forward—while the issue is still manageable.",
+      "No more lying awake replaying a conversation or wondering whether you handled it fairly. Verity gives you a calm, capable path forward while the issue is still manageable.",
     genericQuote: "“It depends. You may wish to consult your HR team...”",
     genericEnd: "STILL YOUR PROBLEM",
     verityQuote:
@@ -163,15 +186,15 @@ const messaging = {
     casesFirst: "The moments you wish",
     casesSecond: "HR was sitting beside you.",
     casesSupport:
-      "Verity brings calm, senior guidance to the awkward, emotional and high-stakes people moments managers are usually left to handle alone.",
+      "Verity brings calm, unbiased, senior guidance to the awkward, emotional and high-stakes people moments managers are usually left to handle alone.",
     trustFirst: "A calm voice, backed by",
     trustSecond: "serious HR judgement.",
     trustBody:
-      "Verity is warm with people and rigorous with process. Her guidance is shaped by real senior HR and employee-relations judgement, then pressure-tested through HR, legal and strict decision-quality lenses.",
+      "Verity is warm with people and rigorous with process. Her guidance is shaped by real senior HR and employee-relations judgement, with Australian employment-law context, expert legal oversight and clear escalation guardrails.",
     waitFirst: "Never face a difficult",
     waitEmphasis: "people decision alone.",
     waitBody:
-      "Join the Australian early-access list and put a calm, capable AI HR manager in your corner.",
+      "Get 24/7 senior HR judgement for your growing business or busy HR team, at a fraction of the cost of adding another senior hire.",
     formCta: "Put Verity in my corner",
   },
   leverage: {
@@ -301,7 +324,7 @@ export function VerityLanding({
         "@id": "https://www.askverity.io/#organization",
         name: "Ask Verity",
         url: "https://www.askverity.io/",
-        description: "AI HR manager for Australian businesses.",
+        description: "24/7 AI HR meeting and employee-matter guidance for Australian businesses.",
         areaServed: { "@type": "Country", name: "Australia" },
       },
       {
@@ -310,7 +333,7 @@ export function VerityLanding({
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         description:
-          "An AI HR manager that helps Australian business leaders diagnose people issues, make sound decisions and create the documents needed to act.",
+          "An AI HR manager that records employee meetings with consent, provides real-time guidance and creates the documents and file notes needed to act.",
         audience: {
           "@type": "BusinessAudience",
           audienceType:
@@ -378,7 +401,7 @@ export function VerityLanding({
           <div className="shell hero-shell">
             <div className="hero-copy">
               <div className="category-line hero-in hero-in-1">
-                <span>AI HR MANAGER</span>
+                <span>24/7 AI HR MANAGER</span>
                 <span>{copy.category}</span>
               </div>
               <h1 id="hero-title" className="hero-in hero-in-2">
@@ -389,7 +412,7 @@ export function VerityLanding({
               <div className="hero-bottom hero-in hero-in-3">
                 <p>{copy.heroSupport}</p>
                 <div className="hero-actions">
-                  <a className="button button-violet button-large" href="#waitlist">
+                  <a className="button button-violet button-large hero-primary" href="#waitlist">
                     {copy.heroCta} <Arrow />
                   </a>
                   <a className="underlined-link" href="#how">
@@ -468,7 +491,7 @@ export function VerityLanding({
                     </div>
                     <div className="document-card document-card-three">
                       <span>03</span>
-                      <b>Adjustment review</b>
+                      <b>Reasonable adjustments review</b>
                       <i>QUEUED</i>
                     </div>
                     <div className="output-note">
@@ -495,10 +518,13 @@ export function VerityLanding({
                 <div className="ticker-group" aria-hidden={set === 1} key={set}>
                   <span>PERFORMANCE</span><i>✦</i>
                   <span>ABSENCE</span><i>✦</i>
-                  <span>ADJUSTMENTS</span><i>✦</i>
+                  <span>REASONABLE ADJUSTMENTS</span><i>✦</i>
                   <span>REDUNDANCY</span><i>✦</i>
                   <span>INVESTIGATIONS</span><i>✦</i>
                   <span>CONDUCT</span><i>✦</i>
+                  <span>COMPLAINTS</span><i>✦</i>
+                  <span>RECRUITMENT</span><i>✦</i>
+                  <span>DISCRIMINATION</span><i>✦</i>
                 </div>
               ))}
             </div>
@@ -506,10 +532,7 @@ export function VerityLanding({
         </section>
 
         <section className="statement-section">
-          <div className="shell statement-grid">
-            <p className="section-label" data-reveal>
-              THE DIFFERENCE
-            </p>
+          <div className="shell statement-grid statement-grid-single">
             <div data-reveal>
               <h2>
                 {copy.statementFirst}
@@ -537,7 +560,7 @@ export function VerityLanding({
         <section className="workflow-section" id="how">
           <div className="shell">
             <div className="section-heading" data-reveal>
-              <p className="section-label">HOW VERITY WORKS</p>
+              <p className="section-title">HOW VERITY WORKS</p>
               <h2>
                 {copy.workflowFirst}
                 <br />
@@ -562,7 +585,7 @@ export function VerityLanding({
                   >
                     <span>{item.artefact}</span>
                     <p>{item.example}</p>
-                    <i aria-hidden="true">{index === 2 ? "✓" : "↳"}</i>
+                    <i aria-hidden="true">{index >= 2 ? "✓" : "↳"}</i>
                   </div>
                 </article>
               ))}
@@ -570,10 +593,111 @@ export function VerityLanding({
           </div>
         </section>
 
+        <section className="statement-section" id="meetings">
+          <div className="shell statement-grid">
+            <p className="section-title section-title-soft" data-reveal>
+              INSIDE THE MEETING
+            </p>
+            <div data-reveal>
+              <h2>
+                Verity doesn’t just advise before the meeting.
+                <br />
+                She joins you in it.
+              </h2>
+              <p className="statement-lead">
+                From one-on-ones and return-to-work discussions to performance, conduct, grievances, workplace change and investigations, Verity can join any important employee meeting. With everyone’s consent, she records the conversation, guides you in real time and keeps everything together inside one employee matter.
+              </p>
+            </div>
+          </div>
+
+          <div className="shell meeting-journey">
+            <div className="meeting-experience">
+              <div className="meeting-console" data-reveal>
+                <header className="meeting-console-bar">
+                  <span>EMPLOYEE MATTER / LIVE MEETING</span>
+                  <span className="meeting-recording"><i aria-hidden="true" /> RECORDING · 00:18:42</span>
+                </header>
+                <div className="meeting-console-body">
+                  <p className="meeting-consent">RECORDING WITH PARTICIPANT CONSENT</p>
+                  <div className="meeting-scope" aria-label="Examples of meetings Verity can support">
+                    <span>ONE-ON-ONE</span>
+                    <span>RETURN TO WORK</span>
+                    <span>PERFORMANCE</span>
+                    <span>CONDUCT</span>
+                    <span>GRIEVANCE</span>
+                    <span>WORKPLACE CHANGE</span>
+                    <span>INVESTIGATION</span>
+                  </div>
+                  <div className="transcript-line">
+                    <span>MANAGER</span>
+                    <p>“Before we move on, I want to make sure I’ve understood what you’re raising.”</p>
+                  </div>
+                  <div className="transcript-line">
+                    <span>EMPLOYEE</span>
+                    <p>“The change affected my workload, and I don’t think that was taken into account.”</p>
+                  </div>
+                  <aside className="live-guidance">
+                    <span>VERITY · LIVE GUIDANCE</span>
+                    <strong>Clarify the employee’s concern before discussing the next step.</strong>
+                    <p>Ask what changed, when it changed and what impact they experienced.</p>
+                  </aside>
+                  <div className="meeting-signals" aria-label="Verity meeting signals">
+                    <span>KEY FACT IDENTIFIED</span>
+                    <span>ASSUMPTION TO TEST</span>
+                    <span>NEXT QUESTION READY</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="meeting-phases" data-reveal>
+                <article>
+                  <span>01 / BEFORE</span>
+                  <h3>Walk in prepared.</h3>
+                  <p>Verity brings together the matter history, agenda, questions, risks and a practical meeting script.</p>
+                </article>
+                <article>
+                  <span>02 / DURING</span>
+                  <h3>Know what to do next.</h3>
+                  <p>With consent, she records and transcribes the conversation, then gives real-time prompts about what to ask or clarify.</p>
+                </article>
+                <article>
+                  <span>03 / AFTER</span>
+                  <h3>Turn the conversation into action.</h3>
+                  <p>See what went well, what was missed or mishandled, how to improve and the correct follow-up to send.</p>
+                </article>
+              </div>
+            </div>
+
+            <div className="meeting-follow-through" data-reveal>
+              <div className="follow-through-intro">
+                <span>AFTER THE CONVERSATION</span>
+                <h3>The meeting becomes the next action.</h3>
+                <p>The recording, transcript, advice, documents and decisions remain connected in the same employee matter.</p>
+              </div>
+              <div className="follow-through-steps">
+                <article>
+                  <span>01</span>
+                  <h4>Document the outcome</h4>
+                  <p>Verity prepares the meeting summary, follow-up email, actions and factual record while the details are fresh.</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <h4>Ready for your HRIS</h4>
+                  <p>Review and approve the file note, then add it to your chosen HRIS without rewriting the meeting.</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <h4>Lawyer handoff, if needed</h4>
+                  <p>With permission, Verity shares the organised matter history, recordings, transcripts and documents with your chosen lawyer.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="use-cases-section" id="use-cases">
           <div className="shell">
             <div className="use-cases-top" data-reveal>
-              <p className="section-label section-label-light">BRING THE WHOLE PROBLEM</p>
               <h2>
                 {copy.casesFirst}
                 <br />
@@ -604,7 +728,6 @@ export function VerityLanding({
         <section className="trust-section" id="trust">
           <div className="shell trust-layout">
             <div className="trust-copy" data-reveal>
-              <p className="section-label">THE JUDGEMENT SYSTEM</p>
               <h2>
                 {copy.trustFirst}
                 <br />
@@ -618,29 +741,25 @@ export function VerityLanding({
               </div>
             </div>
 
-            <div className="evidence-board" data-reveal>
-              <div className="evidence-heading">
-                <span>CURRENT TESTING PROGRAMME</span>
-                <span>JUNE 2026</span>
+            <div className="decision-board" data-reveal>
+              <header className="decision-board-header">
+                <span>THE DECISION STANDARD</span>
+                <span className="decision-board-badge">BUILT INTO EVERY MATTER</span>
+              </header>
+              <div className="decision-board-list">
+                {[
+                  ["01", "Facts before assumptions", "Separate what happened from what is believed or inferred."],
+                  ["02", "Fair process", "Keep the person, the evidence and the Australian context in view."],
+                  ["03", "A documented decision", "Create the record, reasoning and follow-through while the details are fresh."],
+                  ["04", "Human escalation", "Recognise when specialist HR or legal advice is the right next step."],
+                ].map(([number, title, body]) => (
+                  <article key={number}>
+                    <span className="decision-number">{number}</span>
+                    <strong>{title}</strong>
+                    <p>{body}</p>
+                  </article>
+                ))}
               </div>
-              <div className="evidence-stat evidence-stat-main">
-                <strong>1,700+</strong>
-                <span>regression runs across the current product testing system</span>
-              </div>
-              <div className="evidence-split">
-                <div className="evidence-stat">
-                  <strong>112</strong>
-                  <span>scenario templates</span>
-                </div>
-                <div className="evidence-stat">
-                  <strong>3</strong>
-                  <span>review lenses: HR, legal and strict</span>
-                </div>
-              </div>
-              <p className="evidence-note">
-                Testing figures describe the current development programme, not
-                customer outcomes or a guarantee of legal compliance.
-              </p>
             </div>
           </div>
         </section>
@@ -648,7 +767,7 @@ export function VerityLanding({
         <section className="australia-section">
           <div className="shell australia-layout">
             <div className="australia-stamp" data-reveal aria-hidden="true">
-              <span>AU</span>
+              <img src="/australia-map.svg" alt="" />
               <small>BUILT HERE<br />FOR HERE</small>
             </div>
             <div className="australia-copy" data-reveal>
@@ -763,7 +882,7 @@ export function VerityLanding({
       <footer className="site-footer">
         <div className="shell footer-layout">
           <a className="brand" href="#top">ASK VERITY</a>
-          <p>Your AI HR Manager · Built for Australian businesses</p>
+          <p>Your 24/7 AI HR Manager · Built for Australian businesses</p>
           <p>© 2026 Ask Verity</p>
         </div>
       </footer>
@@ -774,3 +893,4 @@ export function VerityLanding({
 export default function Home() {
   return <VerityLanding version="relief" />;
 }
+

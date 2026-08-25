@@ -9,7 +9,7 @@ const geist = Geist({
 
 const title = "Ask Verity | Your AI HR Manager for Australia";
 const description =
-  "Verity is the AI HR manager in your corner when a difficult people problem lands. Get clear guidance on what to do, what to say and what to document.";
+  "24/7 AI HR guidance for Australian businesses and busy HR teams. Record employee meetings, get real-time advice and create the follow-up documents and file notes.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.askverity.io"),
@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     "reasonable workplace adjustments",
     "redundancy process Australia",
     "senior HR director on demand",
+    "AI meeting assistant for HR",
+    "employee relations meeting recording",
+    "HRIS file notes",
   ],
   alternates: {
     canonical: "/",
@@ -59,13 +62,14 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
   category: "business",
@@ -89,3 +93,4 @@ export default function RootLayout({
     </html>
   );
 }
+

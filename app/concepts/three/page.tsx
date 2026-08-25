@@ -9,3 +9,4 @@ export const metadata: Metadata = {
 export default function LeverageConcept() {
   return <VerityLanding version="leverage" previewMode />;
 }
+
