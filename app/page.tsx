@@ -893,4 +893,3 @@ export function VerityLanding({
 export default function Home() {
   return <VerityLanding version="relief" />;
 }
-

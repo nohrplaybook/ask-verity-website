@@ -9,4 +9,3 @@ export const metadata: Metadata = {
 export default function ReliefConcept() {
   return <VerityLanding version="relief" previewMode />;
 }
-

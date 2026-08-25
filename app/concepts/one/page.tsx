@@ -9,4 +9,3 @@ export const metadata: Metadata = {
 export default function DirectConcept() {
   return <VerityLanding version="direct" previewMode />;
 }
-

@@ -46,4 +46,3 @@ Ask Verity provides HR guidance and decision support. It is not a law firm and d
 ## Availability
 
 Australian early access is planned for the end of August 2026. Businesses can join the waitlist at https://www.askverity.io/.
-
