@@ -23,6 +23,7 @@ function successMessage(created: boolean) {
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
+      name?: unknown;
       email?: unknown;
       companySize?: unknown;
       source?: unknown;
@@ -34,6 +35,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: successMessage(true) });
     }
 
+    const name =
+      typeof body.name === "string" ? body.name.trim().slice(0, 120) : "";
     const email =
       typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
     const companySize =
@@ -51,11 +54,15 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!companySizes.has(companySize)) {
-      return NextResponse.json(
-        { message: "Please select your team size." },
-        { status: 400 },
-      );
+    // Only the waitlist form collects a team size. The library form does not,
+    // so require it there and merely validate it when it is supplied elsewhere.
+    if (source === "waitlist" || companySize) {
+      if (!companySizes.has(companySize)) {
+        return NextResponse.json(
+          { message: "Please select your team size." },
+          { status: 400 },
+        );
+      }
     }
 
     const apiKey = process.env.RESEND_API_KEY;
@@ -76,15 +83,23 @@ export async function POST(request: Request) {
       throw new Error(existing.error.message);
     }
 
+    const [firstName, ...restOfName] = name.split(/\s+/).filter(Boolean);
+    const lastName = restOfName.join(" ");
+
     const properties = {
-      company_size: companySize,
+      ...(name ? { full_name: name } : {}),
+      ...(companySize ? { company_size: companySize } : {}),
       signup_source: source,
       signup_date: new Date().toISOString(),
     };
     const segmentId = process.env.RESEND_WAITLIST_SEGMENT_ID;
 
     if (existing.data) {
-      const updated = await resend.contacts.update({ email, properties });
+      const updated = await resend.contacts.update({
+        email,
+        properties,
+        ...(firstName ? { firstName, lastName } : {}),
+      });
       if (updated.error) {
         throw new Error(updated.error.message);
       }
@@ -105,6 +120,7 @@ export async function POST(request: Request) {
     const created = await resend.contacts.create({
       email,
       unsubscribed: false,
+      ...(firstName ? { firstName, lastName } : {}),
       properties,
       segments: segmentId ? [{ id: segmentId }] : undefined,
     });
@@ -139,7 +155,7 @@ export async function POST(request: Request) {
         from,
         to: notifyEmail,
         subject: "New Ask Verity waitlist signup",
-        text: `${email} joined the Ask Verity waitlist.\n\nTeam size: ${companySize}\nSource: ${source}`,
+        text: `${name || email} joined the Ask Verity waitlist.\n\nName: ${name || "(not given)"}\nEmail: ${email}\nTeam size: ${companySize || "(not asked)"}\nSource: ${source}`,
         tags: [{ name: "category", value: "waitlist_notification" }],
       });
 

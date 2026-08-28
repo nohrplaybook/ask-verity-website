@@ -485,8 +485,8 @@ export default function Page() {
       <div className="f"><label className="lab" htmlFor="size">Team size</label>
       <select id="size" name="size" required={true} defaultValue="">
       <option value="" disabled>Select your team size</option>
-      <option>1–14 people</option><option>15–49 people</option><option>50–199 people</option>
-      <option>200–499 people</option><option>500+ people</option>
+      <option value="1-14">1–14 people</option><option value="15-49">15–49 people</option><option value="50-199">50–199 people</option>
+      <option value="200-499">200–499 people</option><option value="500+">500+ people</option>
       </select></div>
       <div className="hp" aria-hidden="true"><label htmlFor="web">Website</label><input id="web" name="web" tabIndex={-1} autoComplete="off" /></div>
       <button className="cta" type="submit">Put Verity in my corner ↗</button>

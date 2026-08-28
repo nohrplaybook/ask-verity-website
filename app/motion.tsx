@@ -238,19 +238,65 @@ addEventListener("scroll",function(){ if(!raf2) raf2=requestAnimationFrame(funct
 addEventListener("resize",rail,{passive:true}); rail();
 var bar=document.getElementById("top-bar");
 addEventListener("scroll",function(){ bar.classList.toggle("stuck", scrollY>40); },{passive:true});
-var f=document.getElementById("wl") as HTMLFormElement;
-if(f) f.addEventListener("submit",function(e){
+function fieldValue(form,fieldName){
+var el=form.elements.namedItem(fieldName);
+return el&&typeof el.value==="string"?el.value:"";
+}
+function formStatus(form,message,isError){
+var el=form.querySelector(".fmsg");
+if(!el){
+el=document.createElement("p");
+el.className="fmsg";
+el.setAttribute("role","status");
+el.setAttribute("aria-live","polite");
+var fine=form.querySelector(".fine");
+if(fine) form.insertBefore(el,fine); else form.appendChild(el);
+}
+el.classList.toggle("fmsg--err",!!isError);
+el.textContent=message||"";
+}
+function wireForm(form,source,doneLabel){
+if(!form) return;
+form.addEventListener("submit",function(e){
 e.preventDefault();
-if((f.elements.namedItem("web") as HTMLInputElement).value) return;
-if(!f.checkValidity()){ f.reportValidity(); return; }
-var b=f.querySelector(".cta") as HTMLButtonElement; b.textContent="You’re on the list"; b.disabled=true; b.style.opacity=".75";
+/* Honeypot: a filled hidden field means a bot. Look successful, send nothing. */
+if(fieldValue(form,"web")) return;
+if(!form.checkValidity()){ form.reportValidity(); return; }
+var b=form.querySelector(".cta");
+var restore=b.textContent;
+b.disabled=true; b.style.opacity=".75"; b.textContent="Sending…";
+formStatus(form,"",false);
+fetch("/api/waitlist",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:fieldValue(form,"name"),
+email:fieldValue(form,"email"),
+companySize:fieldValue(form,"size"),
+source:source,
+website:fieldValue(form,"web")
+})
+}).then(function(res){
+return res.json().then(
+function(d){ return { ok:res.ok, message:d&&d.message }; },
+function(){ return { ok:res.ok, message:"" }; }
+);
+}).then(function(r){
+if(r.ok){
+b.textContent=doneLabel;
+formStatus(form,r.message||"",false);
+} else {
+b.textContent=restore; b.disabled=false; b.style.opacity="";
+formStatus(form,r.message||"We couldn’t add you just now. Please try again.",true);
+}
+}).catch(function(){
+b.textContent=restore; b.disabled=false; b.style.opacity="";
+formStatus(form,"Couldn’t reach the server. Please check your connection and try again.",true);
 });
-var lf=document.querySelector("[data-lib]") as HTMLFormElement;
-if(lf) lf.addEventListener("submit",function(e){
-e.preventDefault();
-if(!lf.checkValidity()){ lf.reportValidity(); return; }
-var b=lf.querySelector(".cta") as HTMLButtonElement; b.textContent="On its way"; b.disabled=true; b.style.opacity=".75";
 });
+}
+wireForm(document.getElementById("wl"),"waitlist","You’re on the list");
+wireForm(document.querySelector("[data-lib]"),"library","On its way");
 })();
   }, []);
   return null;

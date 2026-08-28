@@ -53,9 +53,28 @@ Also note the rebuild sets `robots: { index: false, follow: false }` in `app/lay
 
 ## Outstanding work, in priority order
 
-### 1. Wire the forms to the real API (blocking for production)
+### 1. Wire the forms to the real API — DONE
 
-Two forms are currently cosmetic. They validate and change their own button label, and store nothing.
+Both forms now POST to `app/api/waitlist/route.ts`. What changed:
+
+- `name` added to the route, carried onto the Resend contact as `firstName`/`lastName` plus a
+  `full_name` property.
+- The team-size `<option>`s now carry the `value`s the API validates (`1-14` … `500+`).
+- The library form has no team-size field, so the route requires `companySize` only when
+  `source === "waitlist"`. The confirmation email's TEAM SIZE row is skipped when it is absent.
+- Sources are `waitlist` and `library`.
+- Both forms show the server's own message inline and re-enable on failure.
+
+**Still required before this captures anything:** the four Resend variables in `.env.example`
+must be set in Vercel, for Preview as well as Production. Without `RESEND_API_KEY` the route
+returns 503 by design.
+
+`npm run test:waitlist` covers the validation contract (see `scripts/test-waitlist.mjs`).
+The Resend calls themselves are not covered — they need a real key.
+
+The original description follows.
+
+Two forms were cosmetic. They validated and changed their own button label, and stored nothing.
 
 - **Waitlist form**, `id="wl"` in `app/page.tsx`, handler at the bottom of `app/motion.tsx`.
   Fields: `name`, `email`, `size` (a `<select>`), plus a honeypot `web`.

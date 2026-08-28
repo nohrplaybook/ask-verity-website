@@ -109,45 +109,47 @@ export function WaitlistConfirmationEmail({
                 </p>
               </td>
             </tr>
-            <tr>
-              <td style={{ padding: "8px 38px 40px" }}>
-                <table
-                  role="presentation"
-                  width="100%"
-                  cellPadding="0"
-                  cellSpacing="0"
-                  style={{
-                    borderTop: `1px solid ${colours.ink}`,
-                    borderBottom: `1px solid ${colours.ink}`,
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style={{
-                          padding: "20px 0",
-                          color: colours.muted,
-                          fontSize: "12px",
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        TEAM SIZE
-                      </td>
-                      <td
-                        align="right"
-                        style={{
-                          padding: "20px 0",
-                          fontSize: "14px",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {companySize} people
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
+            {companySize ? (
+              <tr>
+                <td style={{ padding: "8px 38px 40px" }}>
+                  <table
+                    role="presentation"
+                    width="100%"
+                    cellPadding="0"
+                    cellSpacing="0"
+                    style={{
+                      borderTop: `1px solid ${colours.ink}`,
+                      borderBottom: `1px solid ${colours.ink}`,
+                    }}
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style={{
+                            padding: "20px 0",
+                            color: colours.muted,
+                            fontSize: "12px",
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          TEAM SIZE
+                        </td>
+                        <td
+                          align="right"
+                          style={{
+                            padding: "20px 0",
+                            fontSize: "14px",
+                            fontWeight: 700,
+                          }}
+                        >
+                          {companySize} people
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            ) : null}
             <tr>
               <td
                 style={{

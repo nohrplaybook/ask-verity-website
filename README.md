@@ -24,5 +24,9 @@ npm start
 
 ## Before launch
 1. **Remove the noindex.** `app/layout.tsx` → `robots: { index: false, follow: false }`. Delete that line when you want Google to see it.
-2. **Wire the forms.** Both are cosmetic right now: they validate and show a confirmation, nothing is stored. Handlers are at the bottom of `app/motion.tsx` (`#wl` = waitlist, `[data-lib]` = library). Point them at your provider.
+2. **Set the Resend environment variables.** Both forms now POST to `app/api/waitlist/route.ts`.
+   Until `RESEND_API_KEY` is set the route answers 503 and the form shows "Early-access signups are
+   being connected." See `.env.example` for the four variables. Set them for Preview as well as
+   Production, or preview signups will not capture.
+   Re-run the contract test after any change: `npm run build && npx next start -p 3100`, then `npm run test:waitlist`.
 3. **Check the Fair Work dates.** The September 2026 early-access date appears in the FAQ and the waitlist eyebrow.

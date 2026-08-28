@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:waitlist": "node scripts/test-waitlist.mjs"
   },
   "dependencies": {
     "next": "^16.3.3",
