@@ -1,95 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-});
-
-const title = "Ask Verity | Your AI HR Manager for Australia";
-const description =
-  "24/7 AI HR guidance for Australian businesses and busy HR teams. Record employee meetings, get real-time advice and create the follow-up documents and file notes.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.askverity.io"),
-  title: {
-    default: title,
-    template: "%s | Ask Verity",
-  },
-  description,
-  applicationName: "Ask Verity",
-  creator: "Ask Verity",
-  publisher: "Ask Verity",
-  keywords: [
-    "AI HR manager Australia",
-    "AI HR for small business",
-    "virtual HR manager",
-    "people management",
-    "Australian workplace guidance",
-    "performance conversations",
-    "sick leave management",
-    "reasonable workplace adjustments",
-    "redundancy process Australia",
-    "senior HR director on demand",
-    "AI meeting assistant for HR",
-    "employee relations meeting recording",
-    "HRIS file notes",
-  ],
-  alternates: {
-    canonical: "/",
-  },
+  title: "Ask Verity — Your 24/7 AI HR manager, built for Australian businesses",
+  description:
+    "Ask Verity is a 24/7 AI HR manager for Australian businesses and busy HR teams. She diagnoses the employee matter, joins and records the meeting with consent, and produces the documents you need to act.",
+  robots: { index: false, follow: false },
   openGraph: {
     type: "website",
-    locale: "en_AU",
-    url: "/",
-    siteName: "Ask Verity",
-    title,
-    description,
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Ask Verity — Your AI HR Manager for Australia.",
-      },
-    ],
+    title: "Ask Verity — Your 24/7 AI HR manager",
+    description:
+      "Never face a difficult people decision alone. Senior HR judgement, in the room with you, for Australian businesses.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-    images: ["/og.png"],
+  icons: {
+    icon:
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='8.5' fill='%237657FF'/%3E%3Cpath d='M8.2 9.6 L13.9 19.9 L20.1 7.2' fill='none' stroke='white' stroke-width='2.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  category: "business",
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#20172b",
-  colorScheme: "light",
-};
+export const viewport: Viewport = { themeColor: "#17111F" };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-AU">
-      <body className={geist.variable}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
