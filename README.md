@@ -1,65 +1,28 @@
-# Ask Verity
+# Ask Verity — website
 
-The public launch website for Ask Verity, an AI HR manager for Australian
-founders, business owners and managers.
+Next.js 16 (App Router). Static, no server dependencies.
 
-## Technology
-
-- Next.js App Router
-- React and TypeScript
-- Vercel hosting
-- Resend Contacts, Segments and email delivery
-
-## Local development
-
-```bash
+## Run locally
+```
 npm install
-npm run dev
+npm run dev      # http://localhost:3000
 ```
 
-The local site runs at `http://localhost:3000`.
-
-## Production checks
-
-```bash
-npm run typecheck
-npm run lint
+## Build
+```
 npm run build
+npm start
 ```
 
-## Resend setup
+## Structure
+| File | What it is |
+|---|---|
+| `app/page.tsx` | The whole page as JSX. Every section is here in reading order: hero, statement, workflow, meetings + timeline, use cases, library, trust, Australia, integrations, lawyer panel, FAQ, waitlist, footer. |
+| `app/globals.css` | The entire design system. Tokens at the top (`:root`), then components in the same order as the page. |
+| `app/motion.tsx` | Client component. All motion: the pinned hero, the typing, the meeting console, the scroll-driven timeline spine, the use-case rail, the globe, the forms. Plain DOM on purpose — it drives markup React has already rendered. |
+| `app/layout.tsx` | `<head>`, metadata, fonts. Currently `robots: noindex, nofollow` for pre-launch. |
 
-Create these Contact Properties in Resend before accepting live signups:
-
-- `company_size` — string
-- `signup_source` — string
-- `signup_date` — string
-
-Create an `Australian Early Access` Segment and add the following values to
-Vercel:
-
-- `RESEND_API_KEY`
-- `RESEND_WAITLIST_SEGMENT_ID`
-- `RESEND_FROM_EMAIL`
-- `WAITLIST_NOTIFY_EMAIL` (optional)
-
-The waitlist route creates or updates the contact, retains the signup details,
-adds the contact to the early-access Segment and sends the branded confirmation
-email to new contacts.
-
-## Content routes
-
-- `/` — Human Relief landing page
-- `/people-problems` — People Problems Library
-- `/robots.txt` — search and AI crawler access
-- `/sitemap.xml` — canonical public routes
-- `/llms.txt` — machine-readable Ask Verity summary
-
-The three concept routes remain available for private design reference and are
-marked `noindex`.
-
-## Content editing
-
-Website wording can be reviewed in the shared Ask Verity Google Doc. Once
-changes are approved, update the corresponding page copy and create a Vercel
-preview before promoting it to production.
+## Before launch
+1. **Remove the noindex.** `app/layout.tsx` → `robots: { index: false, follow: false }`. Delete that line when you want Google to see it.
+2. **Wire the forms.** Both are cosmetic right now: they validate and show a confirmation, nothing is stored. Handlers are at the bottom of `app/motion.tsx` (`#wl` = waitlist, `[data-lib]` = library). Point them at your provider.
+3. **Check the Fair Work dates.** The September 2026 early-access date appears in the FAQ and the waitlist eyebrow.
