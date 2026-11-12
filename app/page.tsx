@@ -46,7 +46,6 @@ export default function Page() {
       <div>
       <div className="hphoto" id="panel">
       <img className="hphoto__main" src="/people/hero.jpg" alt="A manager and a team member talking calmly at a desk" />
-      <img className="hphoto__sub" src="/people/talk-table.jpg" alt="" aria-hidden="true" />
       <div className="hquote hquote--you"><span>You tell Verity</span><p>&#8220;Quotes keep going out late and I&#8217;ve put off raising it for two months.&#8221;</p></div>
       <div className="hquote hquote--v"><span>Verity advises</span><p>Start with clear expectations in writing, then an informal conversation this week. Here&#8217;s your opening line and the email to send first.</p></div>
       </div>
@@ -63,9 +62,9 @@ export default function Page() {
       <section className="v2 v2-strip" aria-label="Real people, real workplaces">
       <div className="v2-strip__row">
       <img src="/people/cafe.jpg" alt="A café owner talking with a staff member at the counter" data-r="" />
-      <img src="/people/listening.jpg" alt="A team member explaining something while her manager listens" data-r="" />
-      <img src="/people/office-chat.jpg" alt="Two colleagues in a one-on-one in a small office" data-r="" />
-      <img src="/people/meeting.jpg" alt="A small team talking through an issue around a table" data-r="" />
+      <img src="/people/listening.jpg" alt="A tech team working through something together" data-r="" />
+      <img src="/people/office-chat.jpg" alt="Two aged care workers talking in a hallway" data-r="" />
+      <img src="/people/dental.jpg" alt="A healthcare team together at work" data-r="" />
       </div>
       </section>
       <section className="v2 v2-bingo">
