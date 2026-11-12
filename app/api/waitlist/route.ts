@@ -38,7 +38,10 @@ export async function POST(request: Request) {
       website?: unknown;
       issues?: unknown;
       companyUrl?: unknown;
+      updates?: unknown;
     };
+    // Pilot form: explicit opt-in to marketing emails (unticked by default).
+    const updates = body.updates === true;
     // Pilot form: the applicant's company website or LinkedIn page.
     const companyUrl =
       typeof body.companyUrl === "string" ? body.companyUrl.trim().slice(0, 200) : "";
@@ -115,6 +118,7 @@ export async function POST(request: Request) {
       ...(companySize ? { company_size: companySize } : {}),
       ...(issues.length ? { issue_types: issues.join(",") } : {}),
       ...(companyUrl ? { company_url: companyUrl } : {}),
+      ...(source === "waitlist" ? { marketing_opt_in: updates ? "yes" : "no" } : {}),
       signup_source: source,
       signup_date: new Date().toISOString(),
     };
@@ -124,6 +128,8 @@ export async function POST(request: Request) {
       const updated = await resend.contacts.update({
         email,
         properties,
+        // A fresh opt-in re-subscribes; never unsubscribe someone who opted in before.
+        ...(source === "waitlist" && updates ? { unsubscribed: false } : {}),
         ...(firstName ? { firstName, lastName } : {}),
       });
       if (updated.error) {
@@ -145,7 +151,8 @@ export async function POST(request: Request) {
 
     const created = await resend.contacts.create({
       email,
-      unsubscribed: false,
+      // Pilot applicants join the mailing list only if they ticked the box.
+      unsubscribed: source === "waitlist" ? !updates : false,
       ...(firstName ? { firstName, lastName } : {}),
       properties,
       segments: segmentId ? [{ id: segmentId }] : undefined,
@@ -181,7 +188,7 @@ export async function POST(request: Request) {
         from,
         to: notifyEmail,
         subject: "New Ask Verity waitlist signup",
-        text: `${name || email} joined the Ask Verity waitlist.\n\nName: ${name || "(not given)"}\nEmail: ${email}\nTeam size: ${companySize || "(not asked)"}\nCompany: ${companyUrl || "(not given)"}\nIssues ticked: ${issues.join(", ") || "(none)"}\nSource: ${source}`,
+        text: `${name || email} joined the Ask Verity waitlist.\n\nName: ${name || "(not given)"}\nEmail: ${email}\nTeam size: ${companySize || "(not asked)"}\nCompany: ${companyUrl || "(not given)"}\nIssues ticked: ${issues.join(", ") || "(none)"}\nMailing list: ${updates ? "yes" : "no"}\nSource: ${source}`,
         tags: [{ name: "category", value: "waitlist_notification" }],
       });
 

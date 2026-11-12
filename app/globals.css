@@ -284,3 +284,25 @@ body{background:var(--paper);color:var(--ink-b);font-size:16px;line-height:26px}
 #how .head,#how .head>div{display:block;text-align:center}
 #how .head .d2{margin-inline:auto;max-width:20ch}
 #how .head .body-l{margin:18px auto 0;max-width:54ch}
+/* Trust points: plain ticked list, no boxes */
+.priv{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:18px}
+.priv li{display:grid;grid-template-columns:28px 1fr;column-gap:14px;row-gap:2px;padding:0;border:0;background:none;border-radius:0;box-shadow:none}
+.priv li::before{content:"";grid-row:1/3;width:26px;height:26px;margin-top:1px;border-radius:50%;background:#FFFFFF26 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat}
+.priv li b{color:#fff;font-size:18px;font-weight:700}
+.priv li span{color:#E4DCFF;font-size:16px}
+/* Pilot section: heading sits level with the top of the form; label as a pill like the rest */
+.join{align-items:start}
+.join>div:first-child{padding-top:clamp(8px,2vw,40px)}
+.join>div:first-child>.lab{display:inline-block;width:fit-content;padding:6px 14px;border-radius:999px;background:#FFFFFF1F;color:#EDE8FF;font-size:14px;line-height:20px;font-weight:600;letter-spacing:0;text-transform:none}
+/* Pilot form: calmer fields, sentence-case labels, soft boxes instead of ruled lines */
+.form .f{border-bottom:0;gap:7px;margin-top:16px}
+#pilot #wl .f label.lab{padding-top:0;font-size:14px;line-height:20px;font-weight:600;letter-spacing:0;text-transform:none;color:#17111F}
+.form .f input,.form .f select{font:inherit;font-size:16px;color:#17111F;background-color:#F7F5FB;border:1px solid #E6E1EE;border-radius:12px;padding:12px 14px;width:100%;transition:border-color .2s,background-color .2s}
+.form .f select{padding-right:34px;background-position:calc(100% - 19px) calc(50% - 1px),calc(100% - 14px) calc(50% - 1px)}
+.form .f input::placeholder{color:#A9A2B4}
+.form .f input:focus,.form .f select:focus{outline:none;border-color:#7657FF;background-color:#fff}
+.form .f:focus-within{border-color:transparent}
+#pilot #wl .issues legend{font-size:14px;line-height:20px;font-weight:600;color:#17111F;padding:0;margin-bottom:10px}
+.optin{display:flex;align-items:flex-start;gap:10px;margin:18px 0 4px;font-size:14px;line-height:1.45;color:#4A4255;cursor:pointer}
+.optin input{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:#5B3BE0;cursor:pointer}
+.founder__photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-lg,28px);display:block}

@@ -276,7 +276,8 @@ companySize:fieldValue(form,"size"),
 companyUrl:fieldValue(form,"company"),
 issues:[].slice.call(form.querySelectorAll('input[name="issues"]:checked')).map(function(c){return c.value;}),
 source:source,
-website:fieldValue(form,"web")
+website:fieldValue(form,"web"),
+updates:!!form.querySelector('input[name="updates"]:checked')
 })
 }).then(function(res){
 return res.json().then(

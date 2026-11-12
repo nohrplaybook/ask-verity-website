@@ -299,13 +299,13 @@ export default function Page() {
       </div>
       </div>
       <div className="founder" data-r="">
-      <div className="ph ph--sq" role="img" aria-label="Photo to come: Claire Alexander, founder"><span>Photo: Claire Alexander</span></div>
+      <img className="founder__photo" src="/people/claire.jpg" alt="Claire Alexander, founder of Ask Verity" />
       <div>
       <p className="lab">Built by someone who&#8217;s run these cases</p>
       <blockquote>&#8220;The world needs fair workplaces.&#8221;</blockquote>
       <p>Nothing frustrates me more than watching good businesses get people issues wrong, then pay for it in turnover, stress and a damaged culture. I built Verity so every business can handle the hard conversations properly, whether they have HR or not.</p>
-      <p>Verity&#8217;s process comes from years of running employee relations cases as a senior HR leader, including scaling people functions at Zip Co and Cluey and as a founding Chief of People.</p>
-      <p className="founder__by"><b>Claire Alexander, Founder</b><span>Senior HR operator · Admitted as a lawyer in the UK</span></p>
+      <p>Verity&#8217;s process comes from years of running employee relations cases as a senior HR leader and founding Chief of People, and before that as an employment lawyer in the UK.</p>
+      <p className="founder__by"><b>Claire Alexander, Founder</b></p>
       </div>
       </div>
       </div>
@@ -361,7 +361,7 @@ export default function Page() {
       </svg>
       </div>
       <div>
-      <h2 className="d2" data-r="" style={{marginTop:'24px'}}>Built for Australian employee relations, <em>not adapted for it.</em></h2>
+      <h2 className="d2" data-r="" style={{marginTop:'24px'}}>Not global advice with <em>&#8220;Australia&#8221; pasted on top.</em></h2>
       <p className="body-l" data-r="" style={{marginTop:'26px'}}>Your people&#8217;s information, protected.</p>
       <ul className="priv" data-r="">
       <li><b>Hosted in Australia</b><span>Your data stays onshore.</span></li>
@@ -416,11 +416,11 @@ export default function Page() {
       <form className="form" id="wl" data-r="" noValidate>
       <p className="fh"><b>Apply for a pilot place</b><span>No names or details about your people. That conversation happens later.</span></p>
       <div className="f"><label className="lab" htmlFor="fname">Your name</label>
-      <input id="fname" name="name" type="text" autoComplete="name" placeholder="First and last name" required={true} /></div>
+      <input id="fname" name="name" type="text" autoComplete="name" placeholder="Jane Smith" required={true} /></div>
       <div className="f"><label className="lab" htmlFor="email">Work email</label>
       <input id="email" name="email" type="email" autoComplete="email" placeholder="you@business.com.au" required={true} /></div>
       <div className="f"><label className="lab" htmlFor="company">Company website or LinkedIn</label>
-      <input id="company" name="company" type="text" inputMode="url" autoComplete="url" placeholder="yourbusiness.com.au or linkedin.com/company/…" required={true} /></div>
+      <input id="company" name="company" type="text" inputMode="url" autoComplete="url" placeholder="yourbusiness.com.au" required={true} /></div>
       <div className="f"><label className="lab" htmlFor="size">How many people work in your business?</label>
       <select id="size" name="size" required={true} defaultValue="">
       <option value="" disabled>Select your team size</option>
@@ -434,8 +434,9 @@ export default function Page() {
       ))}
       </fieldset>
       <div className="hp" aria-hidden="true"><label htmlFor="web">Website</label><input id="web" name="web" tabIndex={-1} autoComplete="off" /></div>
+      <label className="optin"><input type="checkbox" name="updates" value="yes" /><span>Also send me Verity updates and practical guides for handling people issues. Unsubscribe any time.</span></label>
       <button className="cta" type="submit">Apply for a pilot place ↗</button>
-      <p className="fine">We&#8217;ll come back to you personally. No mailing list.</p>
+      <p className="fine">We&#8217;ll come back to you personally about the pilot.</p>
       </form>
       </div>
       </section>
