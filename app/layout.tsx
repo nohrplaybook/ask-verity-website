@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Ask Verity — Fix people problems fast, fairly, and on the record",
   description:
-    "Verity advises you every step of the way, like a senior HR director at your side. Exactly what to say, every letter written, the case file kept. Built for Australian workplaces.",
+    "Verity advises you every step of the way, like a senior HR director at your side. Exactly what to say, every document drafted from PIPs to termination letters, the case file kept. Built for Australian workplaces.",
   robots: { index: false, follow: false },
   openGraph: {
     type: "website",

@@ -29,9 +29,9 @@ export default function Page() {
       <div className="hero__grid" aria-hidden="true"></div>
       <div className="wrap hero__in">
       <div className="hero__copy" id="heroCopy">
-      <p className="v-intro">One people problem. <em>Handled properly.</em></p>
+      <p className="v-intro">Senior HR in your corner. <em>24/7.</em></p>
       <h1 className="d1">Fix people problems fast, fairly, and <em>on the record.</em></h1>
-      <p className="hero__lede">Verity advises you every step of the way, like a senior HR director at your side. Exactly what to say, every letter written, the case file kept.</p>
+      <p className="hero__lede">Verity advises you every step of the way, like a senior HR director at your side. Exactly what to say, every document drafted from PIPs to termination letters, the case file kept.</p>
       <div className="hero__acts">
       <a className="cta" href="#pilot">Apply for the pilot ↗</a>
       <a className="link-q" href="#no-hr">I don&#8217;t have HR</a>
@@ -72,8 +72,8 @@ export default function Page() {
       <div className="wrap">
       <div className="v2-head">
       <p className="v2-eyebrow" data-r="">Sound familiar?</p>
-      <h2 className="v2-h2" data-r="">Let&#8217;s play <em>people-problem bingo.</em></h2>
-      <p className="v2-sub" data-r="">Three or more of these? You&#8217;ve got bingo. And you&#8217;ve got a people problem that&#8217;s costing you more than you think. <b>Tap the ones that sound like you.</b></p>
+      <h2 className="v2-h2" data-r="">Which of these are <em>on your plate right now?</em></h2>
+      <p className="v2-sub" data-r="">Be honest. If more than a couple ring true, the problem is already costing you time, sleep and good people. <b>Tap any that sound like you.</b></p>
       </div>
       <div className="v2-bingo__grid" id="bingo" data-r="">
       {[
@@ -136,7 +136,7 @@ export default function Page() {
       <div className="v2-glow" data-r="">
       <p className="v2-glow__eyebrow">Ask Verity</p>
       <h2>Verity <em>closes the gap.</em></h2>
-      <p>Advice at every step, the words for every conversation, every letter drafted, and one case file that shows you did it properly.</p>
+      <p>Advice at every step. The words for every conversation. Every document drafted for you, from PIPs to termination letters. And one case file that shows you did it properly.</p>
       <a className="v2-glow__link" href="#how">See how it works <i aria-hidden="true">&#8594;</i></a>
       </div>
       </div>

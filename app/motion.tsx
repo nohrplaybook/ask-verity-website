@@ -311,7 +311,7 @@ t.setAttribute("aria-pressed",on?"true":"false");
 var n=bingo.querySelectorAll('[aria-pressed="true"]').length;
 bingo.classList.toggle("is-bingo",n>=3);
 bmsg.classList.toggle("is-bingo",n>=3);
-bmsg.textContent = n>=3 ? "Bingo. "+n+" of 12. Verity is built to take every one of these off your plate."
+bmsg.textContent = n>=3 ? n+" of 12. That is a lot to carry on your own. Verity is built to take these off your plate."
 : (n>0 ? n+" of 12 so far." : bdefault);
 });
 }
