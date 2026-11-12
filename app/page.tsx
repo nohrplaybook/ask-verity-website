@@ -74,7 +74,6 @@ export default function Page() {
       <section className="v2 v2-bingo">
       <div className="wrap">
       <div className="v2-head">
-      <p className="v2-eyebrow" data-r="">Sound familiar?</p>
       <h2 className="v2-h2" data-r="">Which of these are <em>on your plate right now?</em></h2>
       <p className="v2-sub" data-r="">Be honest. If more than a couple ring true, the problem is already costing you time, sleep and good people. <b>Tap any that sound like you.</b></p>
       </div>

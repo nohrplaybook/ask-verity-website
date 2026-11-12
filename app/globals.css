@@ -275,3 +275,9 @@ body{background:var(--paper);color:var(--ink-b);font-size:16px;line-height:26px}
 @media (max-width:900px){.hero{overflow:hidden}html{overflow-x:clip}}
 .form .issue input[type=checkbox]{appearance:auto;-webkit-appearance:checkbox;flex:none;width:18px!important;height:18px;min-height:0;margin:0;padding:0;border:0;background:none;accent-color:#6B46F2}.form .issue span{color:#1F1838;opacity:1;font-weight:500}
 .join .lab,.dark .lab{font-family:inherit;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C9C2E6}
+/* Section labels: soft violet pill, sentence case (Claire picked, 12 Nov) */
+.v2-eyebrow,.v2-sec .lab,.v2-sec .head .lab,.vs__s .lab,.founder .lab{display:inline-block;width:auto;padding:6px 14px;border-radius:999px;background:#EDE8FF;color:#4B2CD4;font-size:14px;line-height:20px;font-weight:600;letter-spacing:0;text-transform:none}
+.v2-eyebrow::before,.v2-sec .lab::before{content:none}
+.v2-eyebrow,.v2-sec .lab,.vs__s .lab,.founder .lab{width:fit-content;justify-self:start;align-self:start}
+.v2-strip__head .v2-eyebrow,.v2-head .v2-eyebrow,.v2-sec .head .lab{justify-self:center}
+.vs__s--live .lab,.dark .lab{background:#FFFFFF1F;color:#EDE8FF}
