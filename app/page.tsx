@@ -162,7 +162,6 @@ export default function Page() {
       <div className="wrap">
       <div className="head">
       <div>
-      <p className="lab" data-r="">The Verity difference</p>
       <h2 className="d2" data-r="">Fixing it properly starts with <em>the right advice.</em></h2>
       <p className="body-l" data-r="">Most tools track your cases. Verity tells you how to run them, before, during and after every conversation.</p>
       </div>

@@ -281,3 +281,6 @@ body{background:var(--paper);color:var(--ink-b);font-size:16px;line-height:26px}
 .v2-eyebrow,.v2-sec .lab,.vs__s .lab,.founder .lab{width:fit-content;justify-self:start;align-self:start}
 .v2-strip__head .v2-eyebrow,.v2-head .v2-eyebrow,.v2-sec .head .lab{justify-self:center}
 .vs__s--live .lab,.dark .lab{background:#FFFFFF1F;color:#EDE8FF}
+#how .head,#how .head>div{display:block;text-align:center}
+#how .head .d2{margin-inline:auto;max-width:20ch}
+#how .head .body-l{margin:18px auto 0;max-width:54ch}
