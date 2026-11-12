@@ -59,12 +59,16 @@ export default function Page() {
       <div className="tick__g" aria-hidden="true"><span>Performance</span><i>✦</i><span>Absence</span><i>✦</i><span>Reasonable adjustments</span><i>✦</i><span>Redundancy</span><i>✦</i><span>Investigations</span><i>✦</i><span>Conduct</span><i>✦</i><span>Complaints</span><i>✦</i><span>Recruitment</span><i>✦</i><span>Discrimination</span><i>✦</i></div>
       </div>
       </div>
-      <section className="v2 v2-strip" aria-label="Real people, real workplaces">
+      <section className="v2 v2-strip" aria-labelledby="strip-h">
+      <div className="v2-strip__head">
+      <p className="v2-eyebrow" data-r="">Built for every workplace</p>
+      <p id="strip-h" className="v2-strip__line" data-r="">From building sites and tech startups to aged care facilities, medical clinics and everywhere in between. If you manage people, Verity is in your corner.</p>
+      </div>
       <div className="v2-strip__row">
-      <img src="/people/cafe.jpg" alt="A café owner talking with a staff member at the counter" data-r="" />
-      <img src="/people/listening.jpg" alt="A tech team working through something together" data-r="" />
-      <img src="/people/office-chat.jpg" alt="Two aged care workers talking in a hallway" data-r="" />
-      <img src="/people/dental.jpg" alt="A healthcare team together at work" data-r="" />
+      <figure data-r=""><img src="/people/cafe.jpg" alt="Two site workers talking through plans" /><figcaption>Building sites</figcaption></figure>
+      <figure data-r=""><img src="/people/listening.jpg" alt="A tech team working through something together" /><figcaption>Tech startups</figcaption></figure>
+      <figure data-r=""><img src="/people/office-chat.jpg" alt="Two aged care workers talking in a hallway" /><figcaption>Aged care facilities</figcaption></figure>
+      <figure data-r=""><img src="/people/dental.jpg" alt="A doctor talking with a patient in a clinic" /><figcaption>Medical clinics</figcaption></figure>
       </div>
       </section>
       <section className="v2 v2-bingo">
@@ -186,8 +190,8 @@ export default function Page() {
       <span className="tls__n" aria-hidden="true"></span>
       <div className="tlc">
       <h3>After</h3>
-      <p className="lead">Every letter drafted.</p>
-      <p className="det">From your case, not a template. You review it, tweak it and approve it. Nothing is sent without you.</p>
+      <p className="lead">Everything you need, drafted.</p>
+      <p className="det">Meeting scripts, emails, PIPs, letters and every other document, drafted from your case, not a template. You review it, tweak it and approve it. Nothing is sent without you.</p>
       </div>
       </article>
       <article className="tls">
@@ -217,7 +221,7 @@ export default function Page() {
       <article className="card card--violet"><h3>Underperformance</h3><p>&#8220;Someone is underperforming. How do I manage it fairly and fast?&#8221;</p><div className="tags"><span>OKRs / KPIs</span><span>Meeting scripts</span><span>Performance improvement plan</span></div></article>
       <article className="card card--lilac"><h3>Sick leave &amp; absence</h3><p>&#8220;His sickness absences are becoming a pattern. What can I actually do?&#8221;</p><div className="tags"><span>Risk checks</span><span>Letter to GP</span><span>Questions to ask</span><span>Document trail</span></div></article>
       <article className="card card--cream"><h3>Reasonable adjustments</h3><p>&#8220;How do we support this person and protect the business?&#8221;</p><div className="tags"><span>Options review</span><span>Consultation plan</span><span>Decision framework</span></div></article>
-      <article className="card card--clay"><h3>Redundancy &amp; restructure</h3><p>&#8220;We may need to restructure. Build the process with me.&#8221;</p><div className="tags"><span>Business case</span><span>Selection criteria</span><span>Letters &amp; scripts</span></div></article>
+      <article className="card card--clay"><h3>Redundancy &amp; restructure</h3><p>&#8220;We may need to restructure. Build the process with me.&#8221;</p><div className="tags"><span>Business case</span><span>Selection criteria</span><span>Documents &amp; scripts</span></div></article>
       <article className="card card--ink"><h3>Conduct &amp; complaints</h3><p>&#8220;A complaint has landed. What happens in the first 24 hours?&#8221;</p><div className="tags"><span>Triage plan</span><span>Fair process</span><span>Investigation pack</span></div></article>
       <article className="card card--bone"><h3>Everyday people calls</h3><p>&#8220;Can I say this? Is this fair? What should I document?&#8221;</p><div className="tags"><span>Clear answer</span><span>Conversation notes</span><span>Next-step checklist</span></div></article>
       </div>
@@ -322,7 +326,7 @@ export default function Page() {
       <tbody>
       <tr><th scope="row">Tells you what to do next</th><td className="cmp__v">At every step</td><td>Yes, by the hour</td><td>On their schedule</td><td>Generic answers</td><td>No</td></tr>
       <tr><th scope="row">Australian process built in</th><td className="cmp__v">Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>Guesswork</td></tr>
-      <tr><th scope="row">Writes the letters</th><td className="cmp__v">Yes, you approve</td><td>Yes, billed</td><td>Sometimes</td><td>Rough drafts</td><td>You do</td></tr>
+      <tr><th scope="row">Drafts every document</th><td className="cmp__v">Yes, you approve</td><td>Yes, billed</td><td>Sometimes</td><td>Rough drafts</td><td>You do</td></tr>
       <tr><th scope="row">Keeps the case file</th><td className="cmp__v">Automatically</td><td>No</td><td>Sometimes</td><td>No</td><td>Rarely</td></tr>
       <tr><th scope="row">Cost</th><td className="cmp__v">Monthly, no lock-in</td><td>Hourly</td><td>Long contract</td><td>Free</td><td>Free, until it isn&#8217;t</td></tr>
       </tbody>
@@ -396,7 +400,7 @@ export default function Page() {
       </div>
       </div>
       <div className="faq" data-r="">
-      <details open={true}><summary><span>Is this just another AI chatbot?</span><i aria-hidden="true">+</i></summary><p>No. A chatbot answers one question and stops. Verity stays with the whole case, advises you at every step and produces the plans, scripts, letters and records you need to act.</p></details>
+      <details open={true}><summary><span>Is this just another AI chatbot?</span><i aria-hidden="true">+</i></summary><p>No. A chatbot answers one question and stops. Verity stays with the whole case, advises you at every step and drafts every document you need, from PIPs to termination letters, and keeps the record.</p></details>
       <details><summary><span>What does the pilot cover?</span><i aria-hidden="true">+</i></summary><p>Underperformance today, with absence next. Conduct, complaints and investigations follow, shaped by what pilot partners need most.</p></details>
       <details><summary><span>Is it legal advice?</span><i aria-hidden="true">+</i></summary><p>No. Verity is HR decision support built on Australian workplace context. It flags when a matter needs a lawyer.</p></details>
       <details><summary><span>Where does my data go?</span><i aria-hidden="true">+</i></summary><p>It stays in Australia, and Verity never trains on it.</p></details>
