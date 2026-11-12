@@ -273,6 +273,8 @@ body:JSON.stringify({
 name:fieldValue(form,"name"),
 email:fieldValue(form,"email"),
 companySize:fieldValue(form,"size"),
+companyUrl:fieldValue(form,"company"),
+issues:[].slice.call(form.querySelectorAll('input[name="issues"]:checked')).map(function(c){return c.value;}),
 source:source,
 website:fieldValue(form,"web")
 })
@@ -295,7 +297,24 @@ formStatus(form,"Couldn’t reach the server. Please check your connection and t
 });
 });
 }
-wireForm(document.getElementById("wl"),"waitlist","You’re on the list");
+wireForm(document.getElementById("wl"),"waitlist","Application received");
+/* People-problem bingo: tap tiles; three or more = bingo. */
+var bingo=document.getElementById("bingo"), bmsg=document.getElementById("bingoMsg");
+if(bingo&&bmsg&&!bingo.dataset.wired){
+bingo.dataset.wired="1";
+var bdefault=bmsg.textContent;
+bingo.addEventListener("click",function(e){
+var t=e.target.closest&&e.target.closest(".v2-tile");
+if(!t) return;
+var on=t.getAttribute("aria-pressed")!=="true";
+t.setAttribute("aria-pressed",on?"true":"false");
+var n=bingo.querySelectorAll('[aria-pressed="true"]').length;
+bingo.classList.toggle("is-bingo",n>=3);
+bmsg.classList.toggle("is-bingo",n>=3);
+bmsg.textContent = n>=3 ? "Bingo. "+n+" of 12. Verity is built to take every one of these off your plate."
+: (n>0 ? n+" of 12 so far." : bdefault);
+});
+}
 wireForm(document.querySelector("[data-lib]"),"library","On its way");
 })();
   }, []);

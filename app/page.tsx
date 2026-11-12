@@ -1,19 +1,26 @@
 import Motion from "./motion";
 
+const issues = [
+  { value: "performance", label: "Performance" },
+  { value: "conduct", label: "Conduct" },
+  { value: "attendance", label: "Attendance" },
+  { value: "complaints", label: "Complaints" },
+  { value: "redundancy", label: "Redundancy" },
+  { value: "other", label: "Other" },
+];
+
 export default function Page() {
   return (
     <>
       <header className="top" id="top-bar">
-      <a className="brand" href="#top"><svg className="vmark" viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#9179FF"/><stop offset=".52" stopColor="#7657FF"/><stop offset="1" stopColor="#4B2CD4"/></linearGradient></defs><rect width="28" height="28" rx="8.5" fill="url(#vg)"/><path d="M8.2 9.6 L13.9 19.9 L20.1 7.2" fill="none" stroke="#fff" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round"/></svg><b>ASK VERITY</b></a>
+      <a className="brand" href="#top"><svg className="vmark" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 20 L32 52" stroke="#9B85FF" strokeWidth="9" strokeLinecap="round" fill="none"/><path d="M52 20 L32 52" stroke="#FF8098" strokeWidth="9" strokeLinecap="round" fill="none"/><circle cx="32" cy="13" r="5.5" fill="#F6A76B"/></svg><b className="wordmark">AskVerity</b></a>
       <nav className="navlinks" aria-label="Main navigation">
-      <a href="#how">How she works</a>
-      <a href="#use-cases">What she handles</a>
+      <a href="#no-hr">No HR on staff</a>
+      <a href="#hr-teams">HR teams</a>
+      <a href="#how">How it works</a>
       <a href="#library">People Problems Library</a>
-      <a href="#trust">Why trust Verity</a>
-      <a href="#pricing">Pricing</a>
-      <a className="navlinks__alt" href="#lawyers">Lawyer portal</a>
       </nav>
-      <a className="cta cta--sm" href="#waitlist">Put Verity in my corner ↗</a>
+      <a className="cta cta--sm" href="#pilot">Apply for the pilot ↗</a>
       </header>
       <main id="top">
       <section className="hero" id="hero">
@@ -22,69 +29,26 @@ export default function Page() {
       <div className="hero__grid" aria-hidden="true"></div>
       <div className="wrap hero__in">
       <div className="hero__copy" id="heroCopy">
-      <p className="v-intro">Meet Verity, your <em>AI HR manager.</em></p>
-      <h1 className="d1">You run the business. Verity handles the <em>people stuff.</em></h1>
-      <p className="hero__lede">She tells you what to do, sits in the meeting with you, and writes what comes after.</p>
+      <p className="v-intro">One people problem. <em>Handled properly.</em></p>
+      <h1 className="d1">Fix people problems fast, fairly, and <em>on the record.</em></h1>
+      <p className="hero__lede">Verity advises you every step of the way, like a senior HR director at your side. Exactly what to say, every letter written, the case file kept.</p>
       <div className="hero__acts">
-      <a className="cta" href="#waitlist">Put Verity in my corner ↗</a>
-      <a className="link-q" href="#how">See how she works</a>
+      <a className="cta" href="#pilot">Apply for the pilot ↗</a>
+      <a className="link-q" href="#no-hr">I don&#8217;t have HR</a>
+      <a className="link-q" href="#hr-teams">I have an HR team</a>
       </div>
       <ul className="hproof">
-      <li><b>24/7</b><em>Answers at 11pm on a Sunday, not next Tuesday</em></li>
-      <li><b>Australian</b><em>Built for Fair Work and how it actually plays out here</em></li>
-      <li><b>One matter</b><em>Advice, meetings and documents kept together</em></li>
+      <li><b>Australian</b><em>Built for Australian workplaces and the Fair Work system</em></li>
+      <li><b>Onshore</b><em>Your data stays in Australia. Verity never trains on it</em></li>
+      <li><b>Your call</b><em>You approve everything. No lock-in</em></li>
       </ul>
       </div>
       <div>
-      <div className="panel" id="panel">
-      <header className="pbar"><b>Sam M &#183; return to work</b></header>
-      <div className="ppanes">
-      <div className="pchat">
-      <div className="pbody">
-      <p className="said">Sam&#8217;s performance has dropped since returning from extended sick leave. Where do I start?</p>
-      <div className="turn">
-      <p className="who">Verity</p>
-      <p data-type-now="">Before we call this a performance issue, let&#8217;s separate three things.</p>
-      <div className="vcard">
-      <span>Answered</span>
-      <div className="qlist">
-      <button className="q on" data-at="0" type="button" tabIndex={-1}><b>What has changed in Sam&#8217;s work, specifically?</b><i>Output down since return, deadlines slipping</i></button>
-      <button className="q" data-at=".24" type="button" tabIndex={-1}><b>Has Sam disclosed a health condition?</b><i>Yes, disclosed on return to work</i></button>
-      <button className="q" data-at=".40" type="button" tabIndex={-1}><b>Have reasonable adjustments been explored?</b><i>Not yet</i></button>
-      </div>
-      </div>
-      <div className="saved out" data-at=".54">
-      <span>Saved to documents</span>
-      <b>Conversation plan &#8212; Sam M</b>
-      <em>Click to open</em>
-      </div>
-      <p className="dis">Guidance only, not legal advice. For anything high-risk or contested, check with an employment lawyer.</p>
-      </div>
-      </div>
-      <div className="pcomp"><span>Tell me what is going on</span><b>Send</b></div>
-      </div>
-      <div className="pdoc out" data-at=".62">
-      <header><b>Conversation plan &#8212; Sam M</b></header>
-      <div className="pdoc__body">
-      <dl className="pdoc__meta">
-      <dt>Prepared for</dt><dd>Claire Alexander</dd>
-      <dt>Employee</dt><dd>Sam M &#183; Operations</dd>
-      <dt>Matter</dt><dd>Return to work</dd>
-      </dl>
-      <h4>Purpose of this conversation</h4>
-      <p>Understand what has changed since Sam returned, before any of this is treated as a performance issue.</p>
-      <h4>Open with</h4>
-      <p>&#8220;I wanted to check in on how things have felt since you came back. This isn&#8217;t a formal meeting.&#8221;</p>
-      <h4>Ask</h4>
-      <ul>
-      <li>What has felt different about the work since you returned?</li>
-      <li>Is anything about how the role is set up getting in the way?</li>
-      <li>Is there support that would make the next few weeks easier?</li>
-      </ul>
-      </div>
-      <footer><span>Download as Word</span></footer>
-      </div>
-      </div>
+      <div className="hphoto" id="panel">
+      <img className="hphoto__main" src="/people/hero.jpg" alt="A manager and a team member talking calmly at a desk" />
+      <img className="hphoto__sub" src="/people/talk-table.jpg" alt="" aria-hidden="true" />
+      <div className="hquote hquote--you"><span>You tell Verity</span><p>&#8220;Quotes keep going out late and I&#8217;ve put off raising it for two months.&#8221;</p></div>
+      <div className="hquote hquote--v"><span>Verity advises</span><p>Start with clear expectations in writing, then an informal conversation this week. Here&#8217;s your opening line and the email to send first.</p></div>
       </div>
       </div>
       </div>
@@ -96,108 +60,109 @@ export default function Page() {
       <div className="tick__g" aria-hidden="true"><span>Performance</span><i>✦</i><span>Absence</span><i>✦</i><span>Reasonable adjustments</span><i>✦</i><span>Redundancy</span><i>✦</i><span>Investigations</span><i>✦</i><span>Conduct</span><i>✦</i><span>Complaints</span><i>✦</i><span>Recruitment</span><i>✦</i><span>Discrimination</span><i>✦</i></div>
       </div>
       </div>
-      <section className="sec sec--cream light">
+      <section className="v2 v2-strip" aria-label="Real people, real workplaces">
+      <div className="v2-strip__row">
+      <img src="/people/cafe.jpg" alt="A café owner talking with a staff member at the counter" data-r="" />
+      <img src="/people/listening.jpg" alt="A team member explaining something while her manager listens" data-r="" />
+      <img src="/people/office-chat.jpg" alt="Two colleagues in a one-on-one in a small office" data-r="" />
+      <img src="/people/meeting.jpg" alt="A small team talking through an issue around a table" data-r="" />
+      </div>
+      </section>
+      <section className="v2 v2-bingo">
       <div className="wrap">
-      <div className="head">
-      <div>
-      <h2 className="d2" data-r="">The people stuff stops <em>following you home.</em></h2>
-      <p className="body-l" data-r="">No more lying awake replaying a conversation or wondering whether you handled it fairly. Verity gives you a calm, capable path forward while the issue is still manageable.</p>
+      <div className="v2-head">
+      <p className="v2-eyebrow" data-r="">Sound familiar?</p>
+      <h2 className="v2-h2" data-r="">Let&#8217;s play <em>people-problem bingo.</em></h2>
+      <p className="v2-sub" data-r="">Three or more of these? You&#8217;ve got bingo. And you&#8217;ve got a people problem that&#8217;s costing you more than you think. <b>Tap the ones that sound like you.</b></p>
       </div>
+      <div className="v2-bingo__grid" id="bingo" data-r="">
+      {[
+        "I’ve been meaning to raise it for weeks.",
+        "I’m not sure what I’m allowed to say.",
+        "I spoke to them once. Didn’t write it down.",
+        "I’ve Googled it at 11pm.",
+        "I asked ChatGPT and got “it depends”.",
+        "My good people are carrying the slack.",
+        "I raised it and a medical certificate turned up.",
+        "The lawyer’s quote made me wince.",
+        "The record is a few texts and an email.",
+        "Each manager handles it differently.",
+        "I lie awake replaying the conversation.",
+        "I’m hoping it just sorts itself out.",
+      ].map((t) => (
+        <button key={t} type="button" className="v2-tile" aria-pressed="false"><span>{t}</span><i aria-hidden="true"></i></button>
+      ))}
       </div>
-      <div className="vs" data-r="">
-      <div className="vs__s vs__s--dead">
-      <span className="lab">Generic AI</span>
-      <p>“It depends. You may wish to consult your HR team…”</p>
-      <span className="end">Still your problem</span>
-      </div>
-      <span className="vs__pivot" aria-hidden="true">&#8800;</span>
-      <div className="vs__s vs__s--live">
-      <span className="lab">Ask Verity</span>
-      <p>“I can help. First, tell me what changed, what has already been said and whether there is any health context I need to understand.”</p>
-      <span className="end">You&#8217;re not doing this alone <i aria-hidden="true">&#8594;</i></span>
-      </div>
+      <div className="v2-bingo__bar" data-r="">
+      <p id="bingoMsg" aria-live="polite">Verity is built to take every one of these off your plate.</p>
+      <a className="cta" href="#pilot">Apply for the pilot ↗</a>
       </div>
       </div>
       </section>
-      <section className="sec sec--bone light" id="how">
+      <section className="v2 v2-gap">
       <div className="wrap">
-      <div className="head">
-      <h2 className="d2" data-r="">From unsure and avoiding it <em>to ready for the conversation.</em></h2>
+      <div className="v2-head">
+      <p className="v2-eyebrow" data-r="">The problem</p>
+      <h2 className="v2-h2" data-r="">The <em>people-problem gap.</em></h2>
+      <p className="v2-sub" data-r="">Managers know something&#8217;s wrong. They just don&#8217;t know what to do about it. So it drags on, and everyone pays.</p>
       </div>
-      <div className="flow">
-      <article className="frow" data-r="">
-      <div className="fidx"><span>01</span><b>Tell</b></div>
-      <div><h3 className="d3">Start with the messy version.</h3><p>Explain what is happening in your own words. Verity works out what matters and what she needs to ask next.</p></div>
-      <div className="fart"><span className="lab">Your situation</span><p>“Sam’s performance has dropped since returning from sick leave. Where do I start?”</p><i>↳</i></div>
-      </article>
-      <article className="frow" data-r="">
-      <div className="fidx"><span>02</span><b>Think</b></div>
-      <div><h3 className="d3">Let Verity diagnose the real issue.</h3><p>She separates facts from assumptions, spots the overlapping risks and asks the questions a senior HR director would.</p></div>
-      <div className="fart"><span className="lab">Verity’s diagnosis</span><p>Performance, health and reasonable-adjustment questions need to be handled separately.</p><i>↳</i></div>
-      </article>
-      <article className="frow" data-r="">
-      <div className="fidx"><span>03</span><b>Act</b></div>
-      <div><h3 className="d3">Get the process, not just an answer.</h3><p>Walk away with the decision path and the practical work: scripts, plans, letters, checklists and consultation documents.</p></div>
-      <div className="fart"><span className="lab">Ready to use</span><p>Conversation scripts · evidence checklist · reasonable adjustment review · follow-up letter · letter to GP</p><i>✓</i></div>
-      </article>
-      <article className="frow" data-r="">
-      <div className="fidx"><span>04</span><b>Meet</b></div>
-      <div><h3 className="d3">Bring Verity into the room.</h3><p>With everyone’s consent, Verity records one-on-ones, underperformance meetings and investigations, guiding you in real time and learning the complete matter.</p></div>
-      <div className="fart"><span className="lab">Inside the meeting</span><p>Recording · transcript · live prompts · review · next steps</p><i>✓</i></div>
-      </article>
-      </div>
-      </div>
-      </section>
-      <section className="sec dark" id="meetings">
-      <div className="wrap">
-      <div className="head">
+      <div className="v2-gap__grid">
+      <article className="v2-gap__card" data-r="">
+      <img src="/people/worried.jpg" alt="A business owner at her desk, worried about a conversation she needs to have" />
       <div>
-      <h2 className="d2" data-r="">Verity doesn’t just advise before the meeting. <em>She joins you in it.</em></h2>
-      <p className="body-l" data-r="">From one-on-ones and return-to-work discussions to performance, conduct, grievances, workplace change and investigations, Verity can join any important employee meeting. With everyone’s consent, she records the conversation, guides you in real time and keeps everything together inside one employee matter.</p>
-      </div>
-      </div>
-      <div className="console" data-r="">
-      <div className="cbar">
-      <div className="cbar__l"><b>Sam M</b><s>/</s><span>Return to work</span><em>Live meeting</em></div>
-      <div className="cbar__r"><span>Recording with participant consent</span><span className="rec"><i></i> 00:18:42</span></div>
-      </div>
-      <div className="cpanes">
-      <div className="ctr">
-      <div className="chd"><b>Live transcript</b><span>Saving to Sam M&#8217;s matter</span></div>
-      <div className="ctr__b">
-      <div className="trow trow--you"><u>You</u><div><h5>You <s>00:14:02</s></h5><p data-type="">&#8220;Before we move on, I want to make sure I&#8217;ve understood what you&#8217;re raising.&#8221;</p></div></div>
-      <div className="trow"><u>SM</u><div><h5>Sam M <s>00:14:11</s></h5><p data-type="">&#8220;The change affected my workload, and I don&#8217;t think that was taken into account.&#8221;</p></div></div>
-      <div className="trow trow--you"><u>You</u><div><h5>You <s>00:14:26</s></h5><p data-type="">&#8220;That&#8217;s fair. Can you tell me what changed, and when you first noticed it?&#8221;</p></div></div>
-      <div className="trow"><u>SM</u><div><h5>Sam M <s>00:14:38</s></h5><p data-type="">&#8220;It started about three weeks after I came back. Some days I&#8217;m fine. Other days I can&#8217;t get through the list.&#8221;</p></div></div>
-      <div className="trow trow--you"><u>You</u><div><h5>You <s>00:14:51</s></h5><p data-type="">&#8220;That&#8217;s useful. Before we talk about support, let me check I&#8217;ve got the timeline right.&#8221;</p></div></div>
-      <div className="tlive"><u><b></b><b></b><b></b></u><span>Verity is listening</span></div>
-      </div>
-      </div>
-      <aside className="cside">
-      <div className="cside__h"><i></i>Verity<span>Listening</span></div>
-      <div className="now">
-      <span>Say this next</span>
-      <b>&#8220;What does a difficult day look like, compared with a good one?&#8221;</b>
-      <p>Gets you specifics you can act on, without asking him about his medical condition.</p>
-      </div>
-      <ul className="ag">
-      <li><i></i>Reason for the concern</li>
-      <li><i></i>Impact on his workload</li>
-      <li><i></i>Support and adjustments</li>
-      <li><i></i>Next steps and timing</li>
+      <h3>For you</h3>
+      <ul>
+      <li>Putting off the conversation</li>
+      <li>Not knowing what you can say or write</li>
+      <li>Hours lost to Google and second-guessing</li>
+      <li>Worry about getting it wrong</li>
       </ul>
-      <div className="flag">
-      <u>&#9888;</u>
+      </div>
+      </article>
+      <blockquote className="v2-gap__quote" data-r=""><p>&#8220;Spoke to him about it&#8221; in a diary says nothing about what was said, or what was agreed.</p></blockquote>
+      <article className="v2-gap__card" data-r="">
+      <img src="/people/team.jpg" alt="Two colleagues working through something together at a laptop" />
       <div>
-      <b>Health and performance in one answer</b>
-      <p>Keep them as two separate conversations. Handling them together is where most managers create a claim.</p>
+      <h3>For your team</h3>
+      <ul>
+      <li>Good people carrying the slack</li>
+      <li>The person involved never told clearly</li>
+      <li>Frustration, then resignations</li>
+      <li>A culture that takes the hit</li>
+      </ul>
+      </div>
+      </article>
+      </div>
+      <div className="v2-glow" data-r="">
+      <p className="v2-glow__eyebrow">Ask Verity</p>
+      <h2>Verity <em>closes the gap.</em></h2>
+      <p>Advice at every step, the words for every conversation, every letter drafted, and one case file that shows you did it properly.</p>
+      <a className="v2-glow__link" href="#how">See how it works <i aria-hidden="true">&#8594;</i></a>
       </div>
       </div>
-      </aside>
+      </section>
+      <section className="v2 v2-why">
+      <div className="wrap split">
+      <div>
+      <p className="v2-eyebrow" data-r="">Why it matters</p>
+      <h2 className="v2-h2" data-r="">Having a good reason <em>isn&#8217;t enough.</em></h2>
+      <p className="v2-p" data-r="">Employers regularly lose unfair dismissal cases even when they had a valid reason. They lose because the process to get there wasn&#8217;t fair.</p>
+      <p className="v2-p" data-r="">If a dismissal is ever challenged, the Fair Work Commission looks at whether there was a valid reason, whether the person was told and had a chance to respond, and whether they were warned. Verity builds that record as you go, so you never have to reconstruct it later.</p>
+      <div className="pair" data-r="">
+      <div><h3>A clear record</h3><p>What was said, when, by whom, and what was agreed.</p></div>
+      <div><h3>Notes that mean something</h3><p>Approved file notes, ready for your HRIS or your files.</p></div>
       </div>
-      <div className="cfoot">
-      <p>Verity is drafting the file note, summary and follow-up as you talk.</p>
-      <b>End &amp; summarise</b>
+      </div>
+      <img className="v2-photo" src="/people/owner.jpg" alt="A small business owner working through her paperwork in her shop" data-r="" />
+      </div>
+      </section>
+      <section className="sec dark" id="how">
+      <div className="wrap">
+      <div className="head">
+      <div>
+      <p className="lab" data-r="">The Verity difference</p>
+      <h2 className="d2" data-r="">Fixing it properly starts with <em>the right advice.</em></h2>
+      <p className="body-l" data-r="">Most tools track your cases. Verity tells you how to run them, before, during and after every conversation.</p>
       </div>
       </div>
       <div className="tl">
@@ -206,48 +171,32 @@ export default function Page() {
       <span className="tls__n" aria-hidden="true"></span>
       <div className="tlc">
       <h3>Before</h3>
-      <p className="lead">Walk in prepared.</p>
-      <p className="det">Verity brings together the matter history, agenda, questions, risks and a practical meeting script, so you know what you are walking into and what you need out of it.</p>
+      <p className="lead">Advice at every step.</p>
+      <p className="det">Not one answer and goodbye. Verity asks the questions a senior HR director would, picks the right process for your situation and stays with you for the whole case.</p>
       </div>
       </article>
       <article className="tls">
       <span className="tls__n" aria-hidden="true"></span>
       <div className="tlc">
       <h3>During</h3>
-      <p className="lead">Know what to do next.</p>
-      <p className="det">With consent, she records and transcribes the conversation, then gives real-time prompts about what to ask, what to clarify and what to keep separate.</p>
+      <p className="lead">The words for the conversation.</p>
+      <p className="det">Opening lines, questions to ask, and what to steer clear of. You walk in prepared, not winging it.</p>
       </div>
       </article>
       <article className="tls">
       <span className="tls__n" aria-hidden="true"></span>
       <div className="tlc">
       <h3>After</h3>
-      <p className="lead">Turn the conversation into action.</p>
-      <p className="det">See what went well, what was missed or mishandled, how to improve next time, and what the correct follow-up looks like.</p>
+      <p className="lead">Every letter drafted.</p>
+      <p className="det">From your case, not a template. You review it, tweak it and approve it. Nothing is sent without you.</p>
       </div>
       </article>
       <article className="tls">
       <span className="tls__n" aria-hidden="true"></span>
       <div className="tlc">
-      <h3>Document</h3>
-      <p className="lead">Written up while it is fresh.</p>
-      <p className="det">Verity prepares the meeting summary, follow-up email, actions and the factual record, in your words, before the detail fades.</p>
-      </div>
-      </article>
-      <article className="tls">
-      <span className="tls__n" aria-hidden="true"></span>
-      <div className="tlc">
-      <h3>File</h3>
-      <p className="lead">Ready for your HRIS.</p>
-      <p className="det">Review and approve the file note, then add it to the system you already use. No rewriting the meeting into a second place.</p>
-      </div>
-      </article>
-      <article className="tls">
-      <span className="tls__n" aria-hidden="true"></span>
-      <div className="tlc">
-      <h3>Escalate</h3>
-      <p className="lead">Only if it needs a lawyer.</p>
-      <p className="det">With your permission, Verity sends the organised matter history, recordings, transcripts and documents to the lawyer you choose.</p>
+      <h3>On the record</h3>
+      <p className="lead">One case file.</p>
+      <p className="det">Every step and decision, in order. If it improves, you close it. If it doesn&#8217;t, Verity guides you through the formal steps, fairly. Ready if anyone ever asks.</p>
       </div>
       </article>
       </div>
@@ -266,66 +215,119 @@ export default function Page() {
       </div>
       <div className="railwrap" id="railwrap">
       <div className="cards" id="cards">
-      <article className="card card--violet"><h3>Underperformance</h3><p>“Someone is underperforming. How do I manage it fairly and fast?”</p><div className="tags"><span>OKRs / KPIs</span><span>Meeting scripts</span><span>Performance improvement plan</span></div></article>
-      <article className="card card--lilac"><h3>Sick leave &amp; absence</h3><p>“His sickness absences are becoming a pattern. What can I actually do?”</p><div className="tags"><span>Risk checks</span><span>Letter to GP</span><span>Questions to ask</span><span>Document trail</span></div></article>
-      <article className="card card--cream"><h3>Reasonable adjustments</h3><p>“How do we support this person and protect the business?”</p><div className="tags"><span>Options review</span><span>Consultation plan</span><span>Decision framework</span></div></article>
-      <article className="card card--clay"><h3>Redundancy &amp; restructure</h3><p>“We may need to restructure. Build the process with me.”</p><div className="tags"><span>Business case</span><span>Selection criteria</span><span>Letters &amp; scripts</span></div></article>
-      <article className="card card--ink"><h3>Conduct &amp; complaints</h3><p>“A complaint has landed. What happens in the first 24 hours?”</p><div className="tags"><span>Triage plan</span><span>Fair process</span><span>Investigation pack</span></div></article>
-      <article className="card card--bone"><h3>Everyday people calls</h3><p>“Can I say this? Is this fair? What should I document?”</p><div className="tags"><span>Clear answer</span><span>Conversation notes</span><span>Next-step checklist</span></div></article>
+      <article className="card card--violet"><h3>Underperformance</h3><p>&#8220;Someone is underperforming. How do I manage it fairly and fast?&#8221;</p><div className="tags"><span>OKRs / KPIs</span><span>Meeting scripts</span><span>Performance improvement plan</span></div></article>
+      <article className="card card--lilac"><h3>Sick leave &amp; absence</h3><p>&#8220;His sickness absences are becoming a pattern. What can I actually do?&#8221;</p><div className="tags"><span>Risk checks</span><span>Letter to GP</span><span>Questions to ask</span><span>Document trail</span></div></article>
+      <article className="card card--cream"><h3>Reasonable adjustments</h3><p>&#8220;How do we support this person and protect the business?&#8221;</p><div className="tags"><span>Options review</span><span>Consultation plan</span><span>Decision framework</span></div></article>
+      <article className="card card--clay"><h3>Redundancy &amp; restructure</h3><p>&#8220;We may need to restructure. Build the process with me.&#8221;</p><div className="tags"><span>Business case</span><span>Selection criteria</span><span>Letters &amp; scripts</span></div></article>
+      <article className="card card--ink"><h3>Conduct &amp; complaints</h3><p>&#8220;A complaint has landed. What happens in the first 24 hours?&#8221;</p><div className="tags"><span>Triage plan</span><span>Fair process</span><span>Investigation pack</span></div></article>
+      <article className="card card--bone"><h3>Everyday people calls</h3><p>&#8220;Can I say this? Is this fair? What should I document?&#8221;</p><div className="tags"><span>Clear answer</span><span>Conversation notes</span><span>Next-step checklist</span></div></article>
       </div>
       </div>
-            </div>
-      </div>
-</section>
-      <section className="sec sec--cream light" id="library">
-      <div className="wrap">
-      <div className="libx" data-r="">
-      <div>
-      <h2>The People Problems Library. <em>Free, and actually usable.</em></h2>
-      <p>Scripts, checklists, templates and letters for the situations Australian managers get handed with no warning, plus everything we write about handling them properly. It opens alongside early access.</p>
-      </div>
-      <form className="libf" data-lib="">
-      <label className="hp" htmlFor="libname">Name</label><label className="hp" htmlFor="libemail">Email</label>
-      <div className="libf__r">
-      <input id="libname" type="text" name="name" placeholder="Your name" autoComplete="name" required={true} />
-      <input id="libemail" type="email" name="email" placeholder="Work email" autoComplete="email" required={true} />
-      </div>
-      <button className="cta" type="submit">Send it to me ↗</button>
-      </form>
       </div>
       </div>
       </section>
-      <section className="sec sec--bone light" id="trust">
+      <section className="sec v2 v2-sec">
+      <div className="wrap">
+      <div className="head">
+      <div>
+      <p className="lab" data-r="">How Verity helps you</p>
+      <h2 className="d2" data-r="">Built for <em>two kinds of workplace.</em></h2>
+      </div>
+      </div>
+      <div className="aud">
+      <a className="aud__c" href="#pilot" id="no-hr" data-r="">
+      <img className="aud__img" src="/people/owner-cafe.jpg" alt="A café owner behind his counter" />
+      <div className="aud__b">
+      <span className="lab">No HR on staff</span>
+      <h3>Owners, CEOs and operators</h3>
+      <p>You run the business and the people stuff lands on you. Verity gives you a senior HR director&#8217;s advice without the salary or the hourly rate.</p>
+      <b>For businesses without HR →</b>
+      </div>
+      </a>
+      <a className="aud__c" href="#pilot" id="hr-teams" data-r="">
+      <img className="aud__img" src="/people/hr-team.jpg" alt="An HR lead in a one-on-one with a manager" />
+      <div className="aud__b">
+      <span className="lab">HR teams</span>
+      <h3>Heads of People, HR advisors and CFOs</h3>
+      <p>Your HR team is busy. Verity gives them one consistent process for every case, and time back for the strategic work.</p>
+      <b>For HR teams →</b>
+      </div>
+      </a>
+      </div>
+      </div>
+      </section>
+      <section className="sec v2 v2-sec">
+      <div className="wrap">
+      <div className="head">
+      <div>
+      <p className="lab" data-r="">A typical example</p>
+      <h2 className="d2" data-r="">Less avoiding. <em>More fixing.</em></h2>
+      </div>
+      </div>
+      <div className="vs" data-r="">
+      <div className="vs__s vs__s--dead">
+      <span className="lab">Without Verity</span>
+      <ul className="vs__l">
+      <li>Put off for eight weeks</li>
+      <li>Raised in a corridor, no notes</li>
+      <li>Medical certificate the next day</li>
+      <li>No idea what&#8217;s allowed next</li>
+      <li>Call a lawyer, pay by the hour</li>
+      </ul>
+      </div>
+      <span className="vs__pivot" aria-hidden="true">&#8800;</span>
+      <div className="vs__s vs__s--live">
+      <span className="lab">With Verity</span>
+      <ul className="vs__l">
+      <li>Expectations set in writing, day one</li>
+      <li>Conversation with a script, day three</li>
+      <li>Notes approved and filed</li>
+      <li>Support agreed, review booked</li>
+      <li>Fixed, or a fair formal process, fully documented</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </section>
+      <section className="sec v2 v2-sec" id="trust">
       <div className="wrap">
       <div className="head">
       <div>
       <h2 className="d2" data-r="">A calm voice, backed by <em>serious HR judgement.</em></h2>
-      <p className="body-l" data-r="">Verity is warm with people and rigorous with process. Her guidance is shaped by real senior HR and employee-relations judgement, with Australian employment-law context throughout. </p>
+      <p className="body-l" data-r="">Verity is warm with people and rigorous with process. Her guidance is shaped by real senior HR and employee-relations judgement, with Australian employment-law context throughout.</p>
       </div>
       </div>
-      <div className="lawy" data-r="">
-      <div className="lawy__s">
-      <span className="lab">What she checks before she answers</span>
-      <h3>The questions a senior HR person would ask you first.</h3>
-      <ul>
-      <li>What actually happened, separated from what is assumed or inferred</li>
-      <li>Whether this sits under an award, an agreement or the contract, and which one</li>
-      <li>The timeline, and what is already documented rather than remembered</li>
-      <li>Whether health, performance and conduct are being handled as one issue when they are three</li>
-      <li>What a fair process requires at this point, not at the end</li>
-      </ul>
+      <div className="founder" data-r="">
+      <div className="ph ph--sq" role="img" aria-label="Photo to come: Claire Alexander, founder"><span>Photo: Claire Alexander</span></div>
+      <div>
+      <p className="lab">Built by someone who&#8217;s run these cases</p>
+      <blockquote>&#8220;The world needs fair workplaces.&#8221;</blockquote>
+      <p>Nothing frustrates me more than watching good businesses get people issues wrong, then pay for it in turnover, stress and a damaged culture. I built Verity so every business can handle the hard conversations properly, whether they have HR or not.</p>
+      <p>Verity&#8217;s process comes from years of running employee relations cases as a senior HR leader, including scaling people functions at Zip Co and Cluey and as a founding Chief of People.</p>
+      <p className="founder__by"><b>Claire Alexander, Founder</b><span>Senior HR operator · Admitted as a lawyer in the UK</span></p>
       </div>
-      <div className="lawy__s">
-      <span className="lab">What she will not do</span>
-      <h3>The guardrails matter more than the answers.</h3>
-      <ul>
-      <li>Guess when a fact is missing. She asks you for it</li>
-      <li>Give legal advice. She tells you when you need it and hands over the file</li>
-      <li>Record a conversation without everyone knowing and agreeing</li>
-      <li>Hand you an answer without the script, the questions and the documents that follow it</li>
-      <li>Pretend a matter is simple when it is not</li>
-      </ul>
       </div>
+      </div>
+      </section>
+      <section className="sec v2 v2-sec">
+      <div className="wrap">
+      <div className="head">
+      <div>
+      <p className="lab" data-r="">Why Verity</p>
+      <h2 className="d2" data-r="">How Verity compares with <em>what most people use today.</em></h2>
+      </div>
+      </div>
+      <div className="cmp" data-r="">
+      <table>
+      <thead><tr><th scope="col"><span className="hp">Question</span></th><th scope="col" className="cmp__v">Verity</th><th scope="col">Lawyer</th><th scope="col">Outsourced HR</th><th scope="col">ChatGPT</th><th scope="col">Doing it yourself</th></tr></thead>
+      <tbody>
+      <tr><th scope="row">Tells you what to do next</th><td className="cmp__v">At every step</td><td>Yes, by the hour</td><td>On their schedule</td><td>Generic answers</td><td>No</td></tr>
+      <tr><th scope="row">Australian process built in</th><td className="cmp__v">Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>Guesswork</td></tr>
+      <tr><th scope="row">Writes the letters</th><td className="cmp__v">Yes, you approve</td><td>Yes, billed</td><td>Sometimes</td><td>Rough drafts</td><td>You do</td></tr>
+      <tr><th scope="row">Keeps the case file</th><td className="cmp__v">Automatically</td><td>No</td><td>Sometimes</td><td>No</td><td>Rarely</td></tr>
+      <tr><th scope="row">Cost</th><td className="cmp__v">Monthly, no lock-in</td><td>Hourly</td><td>Long contract</td><td>Free</td><td>Free, until it isn&#8217;t</td></tr>
+      </tbody>
+      </table>
       </div>
       </div>
       </section>
@@ -358,147 +360,89 @@ export default function Page() {
       </svg>
       </div>
       <div>
-      <h2 className="d2" data-r="" style={{marginTop:'24px'}}>Not global advice with <em>“Australia” pasted on top.</em></h2>
-      <p className="body-l" data-r="" style={{marginTop:'26px'}}>Verity is being built for the way Australian businesses actually manage people: Fair Work context, local workplace realities and the judgement to know when an issue needs specialist advice.</p>
-      <div style={{marginTop:'38px'}} data-r=""><a className="cta cta--ghost" href="#waitlist">Get Australian early access ↗</a></div>
-      </div>
-      </div>
-      </section>
-      <section className="sec dark" id="pricing">
-      <div className="wrap">
-      <div className="head">
-      <div>
-      <h2 className="d2" data-r="">One senior HR brain. <em>Priced like software, not like a consultant.</em></h2>
-      <p className="body-l" data-r="">Three tiers. No hours, no retainer, no day rate. We are setting the numbers with our early access group before launch, so what follows is the shape of the model rather than a price list.</p>
-      </div>
-      </div>
-      <div className="tiers">
-      <div className="tier" data-r="">
-      <span className="lab">Starter</span>
-      <h3>For the business with no HR.</h3>
-      <p className="tier__who">A founder or manager handling people problems alone, usually at 10pm on a Sunday.</p>
-      <div className="tier__price"><b>Set at launch</b><span>monthly</span></div>
-      <ul><li>Ask Verity anything, 24 hours a day</li><li>Diagnosis, risk read and the next three steps</li><li>Scripts for the conversation you are dreading</li><li>Letters, file notes and checklists you can send today</li></ul>
-      <a className="cta cta--ghost" href="#waitlist">Join the waitlist ↗</a>
-      </div>
-      <div className="tier tier--mid" data-r="">
-      <span className="lab">In the room</span>
-      <h3>For the manager who has to run the meeting.</h3>
-      <p className="tier__who">Everything in Starter, plus Verity sits in the conversation itself.</p>
-      <div className="tier__price"><b>Set at launch</b><span>monthly</span></div>
-      <ul><li>Verity joins the meeting with consent</li><li>What to say next, and what not to say, live</li><li>Recording, transcript and a defensible record</li><li>Outcome documents drafted from what was actually said</li><li>Full matter history, first question to close</li></ul>
-      <a className="cta cta--ghost" href="#waitlist">Join the waitlist ↗</a>
-      </div>
-      <div className="tier" data-r="">
-      <span className="lab">Scale</span>
-      <h3>For HR teams and multi-site operators.</h3>
-      <p className="tier__who">Everything in the room, plus the plumbing, the permissions and the reporting.</p>
-      <div className="tier__price"><b>Talk to us</b><span>annual</span></div>
-      <ul><li>HRIS and payroll integrations</li><li>Roles, permissions and matter-level access control</li><li>Panel lawyer referral with the full file attached</li><li>Reporting across sites, managers and matter types</li><li>Onboarding and rollout support for your managers</li></ul>
-      <a className="cta cta--ghost" href="#waitlist">Join the waitlist ↗</a>
-      </div>
-      </div>
-      <p className="pricenote" data-r="">We are not publishing numbers we have not committed to. Early access members see the tiers before anyone else and have a say in where the lines fall.</p>
-      </div>
-      </section>
-      <section className="sec sec--bone light" id="integrations" style={{paddingBlock:'clamp(58px,8.5vh,120px)'}}>
-      <div className="wrap">
-      <div className="head">
-      <div>
-      <h2 className="d2" data-r="">Verity is not another system <em>you have to move into.</em></h2>
-      <div>
-      <p className="body-l" data-r="">She works the employee matter itself, then hands you the approved record to put wherever you already keep it. She is not asking you to migrate, to run a second system in parallel, or to enter the same thing twice.</p>
-      <p className="intg__n" data-r=""><i aria-hidden="true"></i>Direct integrations are on the roadmap. We will name platforms once each one is built and agreed, not before.</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
-      <section className="sec dark" id="lawyers">
-      <div className="wrap">
-      <div className="head">
-      <div>
-      <h2 className="d2" data-r="">Most people problems never need a lawyer. <em>Some do.</em></h2>
-      <p className="body-l" data-r="">Verity handles the matter from the first question to the filed record. When something crosses the line into legal risk, the whole file goes to a lawyer on the Verity panel: chats, timeline, recordings, transcripts and every document, with your permission. Nothing is reconstructed from memory and nothing is billed twice.</p>
-      </div>
-      </div>
-      <div className="lawy" data-r="">
-      <div className="lawy__s">
-      <span className="lab">For the business</span>
-      <h3>You pay for advice, not for someone to work out what happened.</h3>
-      <ul>
-      <li>The matter arrives organised, dated and evidenced</li>
-      <li>You choose the firm. Verity sends the file, you keep control</li>
-      <li>Panel rates negotiated for Ask Verity customers</li>
-      <li>No retainer, no minimum, no relationship you did not ask for</li>
+      <h2 className="d2" data-r="" style={{marginTop:'24px'}}>Built for Australian employee relations, <em>not adapted for it.</em></h2>
+      <p className="body-l" data-r="" style={{marginTop:'26px'}}>Your people&#8217;s information, protected.</p>
+      <ul className="priv" data-r="">
+      <li><b>Hosted in Australia</b><span>Your data stays onshore.</span></li>
+      <li><b>Never used for training</b><span>Your cases are yours.</span></li>
+      <li><b>Human approval</b><span>Nothing is sent without you.</span></li>
       </ul>
-      <a className="cta cta--ghost" href="#waitlist">Join the waitlist ↗</a>
-      </div>
-      <div className="lawy__s">
-      <span className="lab">For the firm</span>
-      <h3>Referred employment work that arrives ready to advise on.</h3>
-      <ul>
-      <li>Australian SME matters, referred at the point the client decides they need you</li>
-      <li>Full history, transcripts and documents on arrival</li>
-      <li>Scope and quote on facts, not on a phone call and a guess</li>
-      <li>Set your own panel rate. No listing fee</li>
-      </ul>
-      <a className="cta" href="#lawyers">Apply to join the panel ↗</a>
-      </div>
       </div>
       </div>
       </section>
-      <section className="sec sec--cream light" id="faq">
+      <section className="sec v2 v2-sec" id="library">
+      <div className="wrap">
+      <div className="libx" data-r="">
+      <div>
+      <h2>The People Problems Library. <em>Free, and actually usable.</em></h2>
+      <p>Scripts, checklists, templates and letters for the situations Australian managers get handed with no warning, plus everything we write about handling them properly.</p>
+      </div>
+      <form className="libf" data-lib="">
+      <label className="hp" htmlFor="libname">Name</label><label className="hp" htmlFor="libemail">Email</label>
+      <div className="libf__r">
+      <input id="libname" type="text" name="name" placeholder="Your name" autoComplete="name" required={true} />
+      <input id="libemail" type="email" name="email" placeholder="Work email" autoComplete="email" required={true} />
+      </div>
+      <button className="cta" type="submit">Send it to me ↗</button>
+      </form>
+      </div>
+      </div>
+      </section>
+      <section className="sec v2 v2-sec" id="faq">
       <div className="wrap">
       <div className="head">
       <div>
-      <h2 className="d2" data-r="">Before you ask Verity anything.</h2>
+      <p className="lab" data-r="">Questions</p>
+      <h2 className="d2" data-r="">The straight answers.</h2>
       </div>
       </div>
       <div className="faq" data-r="">
-      <details open={true}><summary><span>What exactly is Ask Verity?</span><i aria-hidden="true">+</i></summary><p>Ask Verity is a 24/7 AI HR manager for Australian businesses and busy HR teams. She helps you diagnose employee matters, joins and records meetings with consent, and produces the practical HR work needed to act.</p></details>
-      <details><summary><span>Is Verity just another AI chatbot?</span><i aria-hidden="true">+</i></summary><p>No. A generic chatbot gives you an answer and stops. Verity keeps the complete employee matter in context, understands the meetings, identifies risk and creates usable plans, scripts, letters, checklists and decision records.</p></details>
-      <details><summary><span>Who is Verity for?</span><i aria-hidden="true">+</i></summary><p>Verity is designed for Australian SMEs that need senior HR judgement without another full-time hire, and for larger, busy HR teams that need reliable support on live employee matters.</p></details>
-      <details><summary><span>Is Verity an HRIS?</span><i aria-hidden="true">+</i></summary><p>No. Your HRIS stores and administers employee information. Verity helps you handle the employee matter itself, then hands the approved record over for you to add to your chosen HRIS.</p></details>
-      <details><summary><span>What does Verity do during a meeting?</span><i aria-hidden="true">+</i></summary><p>With everyone’s consent, Verity records and transcribes one-on-ones, underperformance meetings, difficult conversations and complex investigations, and gives real-time prompts about what to ask or clarify.</p></details>
-      <details><summary><span>What happens when a matter needs a lawyer?</span><i aria-hidden="true">+</i></summary><p>You can bring a lawyer you choose into the matter through Verity. With your permission, the lawyer receives the organised history, recordings, transcripts and documents.</p></details>
-      <details><summary><span>Can Verity replace an HR manager?</span><i aria-hidden="true">+</i></summary><p>Verity is designed to give businesses much of the judgement, structure and practical output they would normally seek from senior HR. Some matters will still need a human specialist or lawyer, and Verity is designed to recognise when escalation is the right next step.</p></details>
-      <details><summary><span>Is Verity compliant with Australian employment law?</span><i aria-hidden="true">+</i></summary><p>Verity is being developed with Australian employment-law context, current-source checks, expert legal oversight and clear escalation guardrails. She provides HR decision support and is not a law firm or a substitute for legal advice where legal advice is required.</p></details>
-      <details><summary><span>What will Ask Verity cost?</span><i aria-hidden="true">+</i></summary><p>Pricing is being finalised now and will be published before early access opens. The intent is straightforward: a simple subscription that costs a fraction of adding another senior HR hire. Join the waitlist and you will see the numbers before anyone else.</p></details>
-      <details><summary><span>When does early access open?</span><i aria-hidden="true">+</i></summary><p>The first Australian early-access release is planned for September 2026. Join the waitlist to hear when places open.</p></details>
+      <details open={true}><summary><span>Is this just another AI chatbot?</span><i aria-hidden="true">+</i></summary><p>No. A chatbot answers one question and stops. Verity stays with the whole case, advises you at every step and produces the plans, scripts, letters and records you need to act.</p></details>
+      <details><summary><span>What does the pilot cover?</span><i aria-hidden="true">+</i></summary><p>Underperformance today, with absence next. Conduct, complaints and investigations follow, shaped by what pilot partners need most.</p></details>
+      <details><summary><span>Is it legal advice?</span><i aria-hidden="true">+</i></summary><p>No. Verity is HR decision support built on Australian workplace context. It flags when a matter needs a lawyer.</p></details>
+      <details><summary><span>Where does my data go?</span><i aria-hidden="true">+</i></summary><p>It stays in Australia, and Verity never trains on it.</p></details>
+      <details><summary><span>Do I need to install anything?</span><i aria-hidden="true">+</i></summary><p>No. It runs in your browser.</p></details>
       </div>
       </div>
       </section>
-      <section className="sec dark" id="waitlist">
+      <section className="sec dark" id="pilot">
       <div className="wrap join">
       <div data-r="">
-      <p className="lab">Australian early access · September 2026</p>
-      <h2 className="d2" style={{marginTop:'24px'}}>Never face a difficult <em>people decision alone.</em></h2>
-      <p className="body-l" style={{marginTop:'26px',color:'var(--t-light-2)'}}>Get 24/7 senior HR judgement for your growing business or busy HR team, at a fraction of the cost of adding another senior hire.</p>
+      <p className="lab">Founding pilot partners · Limited places</p>
+      <h2 className="d2" style={{marginTop:'24px'}}>Let&#8217;s fix people problems <em>properly, together.</em></h2>
+      <p className="body-l" style={{marginTop:'26px',color:'var(--t-light-2)'}}>Help shape Verity from day one. Senior HR advice at every step, direct support from our founder, and founding pricing for life. Pilot scope: underperformance today, with absence next.</p>
       </div>
       <form className="form" id="wl" data-r="" noValidate>
-      <p className="fh"><b>Join the early-access list</b><span>Australian businesses and HR teams. Places are limited at launch.</span></p>
+      <p className="fh"><b>Apply for a pilot place</b><span>No names or details about your people. That conversation happens later.</span></p>
       <div className="f"><label className="lab" htmlFor="fname">Your name</label>
-      <input id="fname" name="name" type="text" autoComplete="name" placeholder="Claire Alexander" required={true} /></div>
+      <input id="fname" name="name" type="text" autoComplete="name" placeholder="First and last name" required={true} /></div>
       <div className="f"><label className="lab" htmlFor="email">Work email</label>
-      <input id="email" name="email" type="email" autoComplete="email" placeholder="you@company.com.au" required={true} /></div>
-      <div className="f"><label className="lab" htmlFor="size">Team size</label>
+      <input id="email" name="email" type="email" autoComplete="email" placeholder="you@business.com.au" required={true} /></div>
+      <div className="f"><label className="lab" htmlFor="company">Company website or LinkedIn</label>
+      <input id="company" name="company" type="text" inputMode="url" autoComplete="url" placeholder="yourbusiness.com.au or linkedin.com/company/…" required={true} /></div>
+      <div className="f"><label className="lab" htmlFor="size">How many people work in your business?</label>
       <select id="size" name="size" required={true} defaultValue="">
       <option value="" disabled>Select your team size</option>
       <option value="1-14">1–14 people</option><option value="15-49">15–49 people</option><option value="50-199">50–199 people</option>
       <option value="200-499">200–499 people</option><option value="500+">500+ people</option>
       </select></div>
+      <fieldset className="f issues">
+      <legend>Which issue do you want help with first? Tick any that apply</legend>
+      {issues.map((i) => (
+      <label key={i.value} className="issue"><input type="checkbox" name="issues" value={i.value} /><span>{i.label}</span></label>
+      ))}
+      </fieldset>
       <div className="hp" aria-hidden="true"><label htmlFor="web">Website</label><input id="web" name="web" tabIndex={-1} autoComplete="off" /></div>
-      <button className="cta" type="submit">Put Verity in my corner ↗</button>
-      <p className="fine">Early-access updates only. No spam. Unsubscribe whenever you like.</p>
+      <button className="cta" type="submit">Apply for a pilot place ↗</button>
+      <p className="fine">We&#8217;ll come back to you personally. No mailing list.</p>
       </form>
       </div>
       </section>
       </main>
       <footer className="foot">
       <div className="foot__l">
-      <span className="brand"><svg className="vmark" viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="vg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#9179FF"/><stop offset=".52" stopColor="#7657FF"/><stop offset="1" stopColor="#4B2CD4"/></linearGradient></defs><rect width="28" height="28" rx="8.5" fill="url(#vg2)"/><path d="M8.2 9.6 L13.9 19.9 L20.1 7.2" fill="none" stroke="#fff" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round"/></svg><b>ASK VERITY</b></span>
-      <span>Your 24/7 AI HR manager · Built for Australian businesses</span>
+      <span className="brand"><svg className="vmark" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 20 L32 52" stroke="#9B85FF" strokeWidth="9" strokeLinecap="round" fill="none"/><path d="M52 20 L32 52" stroke="#FF8098" strokeWidth="9" strokeLinecap="round" fill="none"/><circle cx="32" cy="13" r="5.5" fill="#F6A76B"/></svg><b className="wordmark">AskVerity</b></span>
+      <span>Senior HR in your corner · Built for Australian workplaces</span>
       <span>© 2026</span>
       </div>
       </footer>

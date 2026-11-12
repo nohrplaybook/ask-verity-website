@@ -2,15 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ask Verity — Your 24/7 AI HR manager, built for Australian businesses",
+  title: "Ask Verity — Fix people problems fast, fairly, and on the record",
   description:
-    "Ask Verity is a 24/7 AI HR manager for Australian businesses and busy HR teams. She diagnoses the employee matter, joins and records the meeting with consent, and produces the documents you need to act.",
+    "Verity advises you every step of the way, like a senior HR director at your side. Exactly what to say, every letter written, the case file kept. Built for Australian workplaces.",
   robots: { index: false, follow: false },
   openGraph: {
     type: "website",
-    title: "Ask Verity — Your 24/7 AI HR manager",
+    title: "Ask Verity — Senior HR in your corner",
     description:
-      "Never face a difficult people decision alone. Senior HR judgement, in the room with you, for Australian businesses.",
+      "Fix people problems fast, fairly, and on the record. Built for Australian workplaces and the Fair Work system.",
   },
   icons: {
     icon:
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap"
         />
       </head>
       <body>{children}</body>

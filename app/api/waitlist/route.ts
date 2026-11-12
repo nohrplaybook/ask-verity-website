@@ -13,6 +13,14 @@ const companySizes = new Set([
 ]);
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const sourcePattern = /^[a-z0-9-]{1,64}$/;
+const issueTypes = new Set([
+  "performance",
+  "conduct",
+  "attendance",
+  "complaints",
+  "redundancy",
+  "other",
+]);
 
 function successMessage(created: boolean) {
   return created
@@ -28,7 +36,12 @@ export async function POST(request: Request) {
       companySize?: unknown;
       source?: unknown;
       website?: unknown;
+      issues?: unknown;
+      companyUrl?: unknown;
     };
+    // Pilot form: the applicant's company website or LinkedIn page.
+    const companyUrl =
+      typeof body.companyUrl === "string" ? body.companyUrl.trim().slice(0, 200) : "";
 
     // Quietly accept bots that fill the hidden field without adding a contact.
     if (typeof body.website === "string" && body.website.trim()) {
@@ -41,6 +54,10 @@ export async function POST(request: Request) {
       typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
     const companySize =
       typeof body.companySize === "string" ? body.companySize : "";
+    // Pilot form: which issue types the applicant ticked. Only known values are kept.
+    const issues = Array.isArray(body.issues)
+      ? [...new Set(body.issues.filter((i): i is string => typeof i === "string" && issueTypes.has(i)))]
+      : [];
     const requestedSource =
       typeof body.source === "string" ? body.source.trim().toLowerCase() : "";
     const source = sourcePattern.test(requestedSource)
@@ -63,6 +80,13 @@ export async function POST(request: Request) {
           { status: 400 },
         );
       }
+    }
+
+    if (source === "waitlist" && !companyUrl) {
+      return NextResponse.json(
+        { message: "Please add your company website or LinkedIn." },
+        { status: 400 },
+      );
     }
 
     const apiKey = process.env.RESEND_API_KEY;
@@ -89,6 +113,8 @@ export async function POST(request: Request) {
     const properties = {
       ...(name ? { full_name: name } : {}),
       ...(companySize ? { company_size: companySize } : {}),
+      ...(issues.length ? { issue_types: issues.join(",") } : {}),
+      ...(companyUrl ? { company_url: companyUrl } : {}),
       signup_source: source,
       signup_date: new Date().toISOString(),
     };
@@ -155,7 +181,7 @@ export async function POST(request: Request) {
         from,
         to: notifyEmail,
         subject: "New Ask Verity waitlist signup",
-        text: `${name || email} joined the Ask Verity waitlist.\n\nName: ${name || "(not given)"}\nEmail: ${email}\nTeam size: ${companySize || "(not asked)"}\nSource: ${source}`,
+        text: `${name || email} joined the Ask Verity waitlist.\n\nName: ${name || "(not given)"}\nEmail: ${email}\nTeam size: ${companySize || "(not asked)"}\nCompany: ${companyUrl || "(not given)"}\nIssues ticked: ${issues.join(", ") || "(none)"}\nSource: ${source}`,
         tags: [{ name: "category", value: "waitlist_notification" }],
       });
 
